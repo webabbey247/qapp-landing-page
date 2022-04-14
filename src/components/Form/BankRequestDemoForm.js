@@ -185,8 +185,8 @@ const InputErrors = styled.div`
 `;
 
 const BankRequestDemoForm = () => {
-  const [loading, setLoading] = useState(false);
-  const [mounted, setMounted] = useState(true);
+  // const [loading, setLoading] = useState(false);
+  // const [mounted, setMounted] = useState(true);
   const [areaCode, setAreaCode] = useState([]);
   const [selectedAreaCode, setSelectedAreaCode] = useState("");
   const [modalVisbile, setModalVisible] = useState(false);
@@ -258,8 +258,8 @@ const BankRequestDemoForm = () => {
   const requestDemo = async (data) => {
     setFullName(data.adminFullName);
     setStatusResponse(true);
-    setLoading(false);
-    setMounted(false);
+    // setLoading(false);
+    // setMounted(false);
   };
 
   return (
