@@ -12,7 +12,7 @@ import BankRequestDemoForm from "../Form/BankRequestDemoForm";
 
 import {consumerLogo, merchantLogo, mfiLogo} from "../../common/images";
 
-const Content = ({pageType}) => {
+const Content = ({pageType,setShowForm}) => {
   return (
     <Fragment>
       {pageType === "finance" && (
@@ -46,7 +46,7 @@ const Content = ({pageType}) => {
               account using the QAPP universal APP either by bank transfer or QR
               Code.
             </ContentDescription>
-            <ContentCta to='/enquiry/request-demo'>Request A Demo</ContentCta>
+            <ContentCta onClick={() => setShowForm(true)}>Request A Demo</ContentCta>
           </Container>
         </ContentSection>
       )}
@@ -62,7 +62,7 @@ const Content = ({pageType}) => {
               This app is termed the “super app” to easily explain the quality,
               variety and super features
             </ContentDescription>
-            <ContentCta to='/enquiry/request-demo'>Request A Demo</ContentCta>
+            <ContentCta to='/'>Download Now</ContentCta>
           </Container>
         </ContentSection>
       )}
