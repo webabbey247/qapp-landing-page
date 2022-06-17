@@ -6,6 +6,7 @@ import PageLayout from "../common/PageLayout";
 import {Section, Container} from "../globalStyles";
 
 import {Features} from "../components";
+import { Content4Column4, ContentRow } from "styles/GlobalCss";
 
 export const FeaturesSection = styled(Section)`
   background: var(--secondary);
@@ -42,9 +43,20 @@ const Homepage = () => {
       <FeaturesSection>
         <Container>
           <FeatureWrapper>
-            <Features pageType='finance' />
-            <Features pageType='merchant' />
-            <Features pageType='consumer' />
+            <ContentRow>
+              <Content4Column4>
+              <Features pageType='finance' />
+              </Content4Column4>
+              <Content4Column4>
+              <Features pageType='agent' />
+              </Content4Column4>
+              <Content4Column4>
+              <Features pageType='merchant' />
+              </Content4Column4>
+              <Content4Column4>
+              <Features pageType='consumer' />
+              </Content4Column4>
+            </ContentRow>
           </FeatureWrapper>
         </Container>
       </FeaturesSection>

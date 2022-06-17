@@ -2,18 +2,14 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 
 export const FeaturesCard = styled.div`
-  flex: 0 0 33.3%;
-  max-width: 33.3%;
+  flex: 0 0 100%;
+  max-width: 100%;
   background: var(--primary);
   padding: 1rem;
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  margin-left: 1rem;
-
-  &:first-child {
-    margin-left: 0;
-  }
+  height: 340px;
 
   @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
     max-width: 100%;
@@ -32,7 +28,9 @@ export const FeaturesCard = styled.div`
 export const FeaturesCardTop = styled.div`
   margin: 0.3rem 0;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
     flex-direction: column;
@@ -110,7 +108,7 @@ export const FeatureTextInfo = styled.p`
   }
 `;
 
-export const FeaturesCta = styled(Link)`
+export const FeaturesCta = styled.a`
   cursor: pointer;
   text-decoration: none;
   background: var(--orange);

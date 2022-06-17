@@ -6,49 +6,30 @@ import {
   ContentIcon,
   ContentDescription,
   ContentCta,
+  ContentContainer,
 } from "./ContentStyles";
 import {Container} from "../../globalStyles";
-import BankRequestDemoForm from "../Form/BankRequestDemoForm";
+import { MFIForm, MerchantForm } from "components/Form";
 
-import {consumerLogo, merchantLogo, mfiLogo} from "../../common/images";
+import {consumerLogo} from "../../common/images";
 
-const Content = ({pageType,setShowForm}) => {
+const Content = ({pageType}) => {
   return (
     <Fragment>
       {pageType === "finance" && (
         <ContentSection>
-          <Container>
-            <ContentHeading>Financial Institutions</ContentHeading>
-            <ContentIconHolder>
-              <ContentIcon src={mfiLogo} alt='Financial Institutions' />
-            </ContentIconHolder>
-            <ContentDescription>
-              QAPP unifies all the banking APPs into one *SUPER APP* and also
-              gives room for some MFIs that do not have an APP for their
-              institutions to create their and manage it themselves for the
-              benefit of their business and comfort of their customers.
-            </ContentDescription>
-            <ContentCta to='/enquiry/request-demo'>Request A Demo</ContentCta>
-          </Container>
+          <ContentContainer>
+            <MFIForm />
+          </ContentContainer>
         </ContentSection>
       )}
 
       {pageType === "merchant" && (
         <ContentSection>
-          <Container>
-            <ContentHeading>Merchants</ContentHeading>
-            <ContentIconHolder>
-              <ContentIcon src={merchantLogo} alt='Merchants' />
-            </ContentIconHolder>
-            <ContentDescription>
-              QAPP makes payment of services seamless and effortless as
-              customers would be able to make payments from any of his/her bank
-              account using the QAPP universal APP either by bank transfer or QR
-              Code.
-            </ContentDescription>
-            <ContentCta onClick={() => setShowForm(true)}>Request A Demo</ContentCta>
-          </Container>
-        </ContentSection>
+        <ContentContainer>
+          <MerchantForm />
+        </ContentContainer>
+      </ContentSection>
       )}
 
       {pageType === "consumer" && (
@@ -67,33 +48,7 @@ const Content = ({pageType,setShowForm}) => {
         </ContentSection>
       )}
 
-      {pageType === "demo" && (
-        <ContentSection>
-          <Container>
-            <ContentHeading>Schedule A Demo</ContentHeading>
-            <ContentIconHolder>
-              <ContentIcon src={mfiLogo} alt='Schedule a demo' />
-            </ContentIconHolder>
-            <BankRequestDemoForm />
-          </Container>
-        </ContentSection>
-      )}
-
-      {pageType === "success" && (
-        <ContentSection>
-          <Container>
-            <ContentHeading>Schedule A Demo</ContentHeading>
-            <ContentIconHolder>
-              <ContentIcon src={mfiLogo} alt='Financial Institutions' />
-            </ContentIconHolder>
-            <ContentHeading>Congratulations Ellem Kuti!</ContentHeading>
-            <ContentDescription>
-              Your request for a demo has been scheduled for May 1, 2022 at 4pm.
-            </ContentDescription>
-            <ContentCta to='/enquiry/request-demo'>Request A Demo</ContentCta>
-          </Container>
-        </ContentSection>
-      )}
+      
     </Fragment>
   );
 };

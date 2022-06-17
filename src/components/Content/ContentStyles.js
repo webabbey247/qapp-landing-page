@@ -1,11 +1,18 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 export const ContentSection = styled.section`
-  width: min(100%, 38rem);
   margin: 0 auto;
   background: var(--white);
-  padding: 3rem 0;
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 2rem 0;
+`;
+
+export const ContentContainer = styled.div`
+width: min(100%, 38rem);
 `;
 
 export const ContentHeading = styled.h2`

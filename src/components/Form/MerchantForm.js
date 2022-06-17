@@ -334,36 +334,7 @@ const MerchantForm = () => {
             ) : (
               ""
             )}
-            {/* {errors.rcNumber && (
-              <InputErrors>{errors.rcNumber.message}</InputErrors>
-            )}
-            <Input
-              className={`${errors.rcNumber ? "invalid" : ""}`}
-              name='rcNumber'
-              type='text'
-              placeholder='RC Number'
-              {...register("rcNumber")}
-            />
-            {errors.adminFullName && (
-              <InputErrors>{errors.adminFullName.message}</InputErrors>
-            )}
-            <Input
-              className={`${errors.adminFullName ? "invalid" : ""}`}
-              name='adminFullName'
-              type='text'
-              placeholder='Contact Full Name'
-              {...register("adminFullName")}
-            />
-            {errors.adminPhone && (
-              <InputErrors>{errors.adminPhone.message}</InputErrors>
-            )}
-            <Input
-              className={`${errors.adminPhone ? "invalid" : ""}`}
-              name='adminPhone'
-              type='text'
-              placeholder='Contact Phone Number ( Must be from selected country above)'
-              {...register("adminPhone")}
-            /> */}
+           
             {errors.adminEmail && (
               <InputErrors>{errors.adminEmail.message}</InputErrors>
             )}
