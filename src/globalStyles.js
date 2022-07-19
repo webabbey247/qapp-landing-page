@@ -1,6 +1,16 @@
 import styled, {createGlobalStyle} from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
+// @font-face {
+//   font-family: "CustomFont";
+//   src: url("https://yoursite.com/css/fonts/CustomFont.eot");
+//   src: url("https://yoursite.com/css/fonts/CustomFont.woff") format("woff"),
+//   url("https://yoursite.com/css/fonts/CustomFont.otf") format("opentype"),
+//   url("https://yoursite.com/css/fonts/CustomFont.svg#filename") format("svg");
+//   }
+
+
 :root {
     --primary: #09354a;
     --secondary: #1b4153;
@@ -21,6 +31,8 @@ const GlobalStyle = createGlobalStyle`
     *::after {
     box-sizing: border-box;
   }
+
+  
 
   body, html{
     font-family: 'DM Sans', sans-serif;

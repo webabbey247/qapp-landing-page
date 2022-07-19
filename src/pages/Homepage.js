@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import {Hero} from "../components";
-import PageLayout from "../common/PageLayout";
+import PageLayout from "../Layouts/PageLayout";
 
 import {Section, Container} from "../globalStyles";
 

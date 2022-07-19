@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {Content} from "../components";
-import PageLayout from "../common/PageLayout";
+import PageLayout from "../Layouts/PageLayout";
 import { MerchantForm } from "components/Form";
 import {
   ContentSection,
@@ -9,7 +9,7 @@ import {
   ContentIcon,
 } from "../components/Content/ContentStyles";
 import {Container} from "../globalStyles";
-import {mfiLogo} from "../common/images";
+import {mfiLogo} from "../assets/images";
 
 
 const Merchants = () => {

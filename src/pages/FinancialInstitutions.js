@@ -1,6 +1,6 @@
 import React from "react";
 import {Content} from "../components";
-import PageLayout from "../common/PageLayout";
+import PageLayout from "../Layouts/PageLayout";
 
 const FinancialIInstition = () => {
   return (

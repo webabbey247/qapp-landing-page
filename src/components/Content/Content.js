@@ -11,7 +11,7 @@ import {
 import {Container} from "../../globalStyles";
 import { MFIForm, MerchantForm } from "components/Form";
 
-import {consumerLogo} from "../../common/images";
+import {consumerLogo} from "../../assets/images";
 
 const Content = ({pageType}) => {
   return (

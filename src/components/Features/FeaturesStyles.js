@@ -9,7 +9,7 @@ export const FeaturesCard = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  height: 340px;
+  height: 300px;
 
   @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
     max-width: 100%;
@@ -47,6 +47,7 @@ export const FeaturesCardIconHolder = styled.div`
   border-radius: 5px;
   width: 50px;
   height: 40px;
+  margin-top: 0.5rem;
 
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
     margin: auto;
@@ -115,7 +116,7 @@ export const FeaturesCta = styled.a`
   backdrop-filter: blur(8px);
   border-radius: 5px;
   margin-left: 3.5rem;
-  padding: 6px 30px;
+  padding: 8px 30px;
   margin-top: 10px;
   text-align: center;
   font-weight: 500;

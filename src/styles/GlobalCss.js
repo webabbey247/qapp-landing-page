@@ -18,7 +18,6 @@ export const GlobalStyle = createGlobalStyle`
       );
   }
 
-
   *,
   *::before,
   *::after {
@@ -41,8 +40,6 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'DM Sans', sans-serif;
   }
   `;
-
-
 
 export const MainContainer = styled.main`
   width: 100%;
@@ -210,6 +207,7 @@ font-family: ${(props) => props.fontFamily || "var(--font-graphix)"};
 width: ${(props) => props.width || "100%"};
 padding: ${(props) => props.padding || "0"};
 margin: ${(props) => props.margin || "0"};
+text-transform: ${(props) => props.textTransform || "unset"};
 `;
 
 export const GeneralMdText = styled.h4`

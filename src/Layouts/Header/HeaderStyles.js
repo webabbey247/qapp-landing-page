@@ -43,6 +43,32 @@ export const NavLogo = styled(Link)`
   z-index: 50;
 `;
 
+export const NavMenuWrapper = styled.div`
+display: flex;
+flex-basis: auto;
+flex-grow: 1;
+align-items: center;
+`;
+
+export const NavMenuUl = styled.ul`
+flex-direction: row;
+margin-left: auto !important;
+display: flex;
+padding-left: 0;
+margin-bottom: 0;
+list-style: none;
+`;
+
+
+export const MenuNavLi = styled.li`
+display: inline-block;
+line-height: 40px;
+margin-left: 20px;
+animation: FadeIn 1s cubic-bezier(.65,.05,.36,1);
+animation-fill-mode: both;
+`;
+
+
 export const NavIcon = styled.img`
   margin-right: 1rem;
   width: 80px;
@@ -51,7 +77,7 @@ export const NavIcon = styled.img`
 export const NavLanguage = styled.div`
   display: flex;
   justify-content: flex-start;
-  margin-top: 0.45rem;
+  margin-top: 0.35rem;
 `;
 
 export const NavLanguageText = styled.p`
@@ -59,15 +85,13 @@ export const NavLanguageText = styled.p`
   font-size: 15px;
   line-height: 25px;
   font-weight: 500;
-  margin: 0;
+  margin: 5px;
 `;
 
 export const NavLanguageIcon = styled.span`
-  margin-left: 0.4rem;
-  margin-top: 0.25rem;
+  margin-left: 0.2rem;
 `;
 
 export const NavLanguageDropdownIcon = styled.span`
-  margin-left: 0.3rem;
-  margin-top: 0.25rem;
+  margin-left: 0.2rem;
 `;
