@@ -16,7 +16,7 @@ const Footer = () => {
         <FooterWrapper>
           <FooterLTR>
             <FooterCopyright>
-              Copyright &copy; 2022 QApp. All rights reserved.
+              Copyright &copy; 2022 Qapp. All rights reserved.
             </FooterCopyright>
           </FooterLTR>
           <FooterRTL>

@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
-import styled from "styled-components";
 import axios from "axios";
+import styled from "styled-components";
 import { CgChevronDownR } from "react-icons/cg";
-import { Button } from "../../globalStyles";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import DatePicker from "react-datepicker";
-import { Calendar } from "react-feather";
+import { Calendar, Clock } from "react-feather";
+import { DatePicker, TimePicker } from 'antd';
+import 'antd/dist/antd.css';
 import moment from "moment";
-import { CustomDiv, GeneralMdText, GeneralSmText } from "styles/GlobalCss";
-import "react-datepicker/dist/react-datepicker.css";
+import { Content2Column2, ContentFullColumn, ContentRow, CustomDiv, GeneralMdText, GeneralSmText, CustomLink, CustomButton } from "styles/GlobalCss";
+
 import { toast } from 'react-toastify';
 
 import {
@@ -37,20 +37,21 @@ const DialingCodeInputWrapper = styled.div`
 display:flex;
 flex-direction: row,
 justify-content: flex-start;
+margin: 0.2rem 0 0;
 `;
 
 const DialingCodeInput = styled.div`
-  width: 17%;
-  background-color: var(--gray-color);
-  border: 1px solid var(--gray-color);
-  height: 3rem;
+  width: 40%;
+  background-color: var(--white);
+  border: 1.5px solid var(--gray-color);
+  height: 3.5rem;
   margin-bottom: 1rem;
   margin-right: 5px;
   border-radius: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 0.8rem;
+  padding: 0.7rem 0.5rem;
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
     width: 30%;
   }
@@ -80,14 +81,17 @@ const DialingCodeModalWrapper = styled.ul`
   list-style: none;
   text-align: left;
   padding: 0;
-  margin: 0 0 0 -1px;
-  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   background-color: var(--white);
   border: 1px solid var(--gray-color);
   white-space: nowrap;
-  max-height: 200px;
+  max-height: 150px;
   overflow-y: scroll;
+  overflow-x: hidden;
   transition: all 0.2s cubic-bezier(0.5, 0, 0, 1.25), opacity 0.15s ease-out;
+  width: 220px;
+
+
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
     max-width: 100px;
     overflow-x: hidden;
@@ -106,7 +110,7 @@ const DialingCodeModalList = styled.li`
   background-color: transparent;
   margin-top: 0;
   list-style: none;
-  border-bottom: 0.5px solid rgba(129, 129, 129, 0.5);
+  border-bottom: 0.5px solid rgba(129, 129, 129, 0.2);
   outline: none;
   @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
     padding: 3px 8px;
@@ -117,6 +121,7 @@ const DialingCodeModalListWrapper = styled.div`
   display: flex;
   flex-direction: row;
   margin: 0.5rem 0;
+  justify-content: space-between;
 `;
 
 const DialingCodeModalListIcon = styled.img`
@@ -136,9 +141,11 @@ const DialingCodeModalListName = styled.span`
 `;
 
 const Input = styled.input`
-  background-color: var(--gray-color);
-  border: 1px solid var(--gray-color);
-  height: 3rem;
+    background-color: var(--white);
+    border: 1.5px solid var(--gray-color);
+    // background-color: var(--gray-color);
+    // border: 1px solid var(--gray-color);
+  height: 3.5rem;
   line-height: 17px;
   padding: 0 16px;
   width: ${({ width }) => (width ? width : "100%")};
@@ -146,7 +153,7 @@ const Input = styled.input`
   font-weight: 400;
   box-sizing: border-box;
   color: #818181;
-  font-size: 13px;
+  font-size: 15px;
   margin-bottom: 1rem;
 
   &.invalid {
@@ -159,17 +166,17 @@ const Input = styled.input`
   }
 
   &::placeholder {
-    font-size: 13px;
+    font-size: 15px;
     line-height: 25px;
     font-weight: 400;
-    color: var(--input-color);
+    color: rgba(0,0,0, 0.25);
     opacity: 0.6;
   }
 
   &:focus {
-    color: var(--input-color);
+    color: var(--orange);
     background-color: var(--white);
-    border-color: var(--gray-color);
+    border-color: var(--orange);
     outline: 0;
     box-shadow: none !important;
   }
@@ -194,8 +201,8 @@ margin: 0px;
 padding: 0px;
 position: absolute;
 right: 3%;
-top: 14%;
-`
+top: 25%;
+`;
 
 const MFIForm = () => {
     const [loading, setLoading] = useState(false);
@@ -235,11 +242,7 @@ const MFIForm = () => {
 
     const validationSchema = yup.object().shape({
         bankName: yup.string().trim().required("Kindly provide your bank name!"),
-        emailAddress: yup.string().trim().required("Kindly provide your email address"),
-        // scheduleDate: yup
-        //     .string()
-        //     .trim()
-        //     .required("Kindly schedule date for this demo!"),
+        rcNumber: yup.string().trim().required("Kindly provide your RC Number"),
     });
 
     const { register, handleSubmit, control, reset, formState } = useForm({
@@ -253,27 +256,28 @@ const MFIForm = () => {
         setLoading(true);
         const userData = {
             name: data.bankName,
-            email: data.emailAddress,
-            demo_date: moment(startDate).format('YYYY-MM-DD h:mm:ss')
+            rcNumber: data.rcNumber,
+            country: data.country,
+            mobileNumber: data.mobileNumber,
         };
 
-        if(userData.demo_date === "") {
-            toast.success("Kindly schedule date and time for this demo ");
-        }
+        console.log("form info", userData)
 
-        // console.log("form data", userData)
+        // if (userData.demo_date === "") {
+        //     toast.success("Kindly schedule date and time for this demo ");
+        // }
 
-        axios.post("/auth/demo", userData).then((res) => {
-            if (res.data.success === true) {
-                // toast.success(res.data.result ? res.data.result : "")
-                setStatusResponse(true);
-                setFullName(userData.bankName)
-                reset();
-            } else {
-                console.log(res.status);
-            }
-        });
-setLoading(false);
+        // axios.post("/auth/demo", userData).then((res) => {
+        //     if (res.data.success === true) {
+        //         // toast.success(res.data.result ? res.data.result : "")
+        //         setStatusResponse(true);
+        //         setFullName(userData.bankName)
+        //         reset();
+        //     } else {
+        //         console.log(res.status);
+        //     }
+        // });
+        setLoading(false);
     };
 
     return (
@@ -287,101 +291,152 @@ setLoading(false);
                 </FormWrapper>
             ) : (
                 <>
-                    <GeneralMdText margin="1rem 0" fontSize="36px" lineHeight="40px" textAlign="center" color="var(--header-color)" textTransform="capitalize" fontWeight="500">Financial Institutions</GeneralMdText>
+                    <GeneralMdText margin="1rem 0" fontSize="34px" lineHeight="40px" textAlign="center" color="var(--header-color)" textTransform="capitalize" fontWeight="400">Financial Institutions</GeneralMdText>
                     <FormWrapper>
                         <Form onSubmit={handleSubmit(requestDemo)}>
-                            {errors.bankName && (
-                                <InputErrors>{errors.bankName.message}</InputErrors>
-                            )}
-                            <Input
-                                className={`${errors.bankName ? "invalid" : ""}`}
-                                name='bankName'
-                                type='text'
-                                placeholder='Bank Name'
-                                {...register("bankName")}
-                            />
+                            <ContentRow>
+                                <Content2Column2>
+                                    {errors.bankName && (
+                                        <InputErrors>{errors.bankName.message}</InputErrors>
+                                    )}
 
-                            {errors.emailAddress && (
-                                <InputErrors>{errors.emailAddress.message}</InputErrors>
-                            )}
-                            <Input
-                                className={`${errors.emailAddress ? "invalid" : ""}`}
-                                name='emailAddress'
-                                type='text'
-                                placeholder='Email Address'
-                                {...register("emailAddress")}
-                            />
+                                    <Input
+                                        className={`${errors.bankName ? "invalid" : ""}`}
+                                        name='bankName'
+                                        type='text'
+                                        placeholder='Bank Name'
+                                        {...register("bankName")}
+                                    />
 
-                            <DialingCodeInputWrapper>
-                                <DialingCodeInput onClick={() => setModalVisible(!modalVisbile)}>
-                                    <CountryFlag
-                                        src={selectedAreaCode?.flag}
-                                        alt={selectedAreaCode?.dialCode}
-                                    ></CountryFlag>
-                                    <CountryCode>
-                                        <CgChevronDownR color='var(--input-color)' size='20px' />
-                                    </CountryCode>
-                                </DialingCodeInput>
-                                <Input
-                                    width='83%'
-                                    type='text'
-                                    placeholder={selectedAreaCode?.name}
-                                    readOnly
-                                />
-                            </DialingCodeInputWrapper>
-                            {modalVisbile ? (
-                                <DialingCodeModalWrapper>
-                                    {areaCode.map((item, i) => (
-                                        <DialingCodeModalList id={item.id}>
-                                            <DialingCodeModalListWrapper
-                                                key={item.i}
-                                                onClick={() => {
-                                                    setSelectedAreaCode(item);
-                                                    setModalVisible(false);
-                                                }}
-                                            >
-                                                <DialingCodeModalListIcon
-                                                    src={item.flag}
-                                                    alt={item.dialCode}
-                                                ></DialingCodeModalListIcon>
-                                                <DialingCodeModalListName>
-                                                    {item.name}
-                                                </DialingCodeModalListName>
-                                            </DialingCodeModalListWrapper>
-                                        </DialingCodeModalList>
-                                    ))}
-                                </DialingCodeModalWrapper>
-                            ) : (
-                                ""
-                            )}
+                                </Content2Column2>
+                                <Content2Column2>
+                                    {errors.rcNumber && (
+                                        <InputErrors>{errors.rcNumber.message}</InputErrors>
+                                    )}
+                                    <Input
+                                        className={`${errors.rcNumber ? "invalid" : ""}`}
+                                        name='rcNumber'
+                                        type='text'
+                                        placeholder='RC Number'
+                                        {...register("rcNumber")}
+                                    />
+                                </Content2Column2>
+                                <Content2Column2>
+                                    {errors.country && (
+                                        <InputErrors>{errors.country.message}</InputErrors>
+                                    )}
+                                    <Input
+                                        className={`${errors.country ? "invalid" : ""}`}
+                                        name='country'
+                                        type='text'
+                                        placeholder={selectedAreaCode?.name}
+                                        value={selectedAreaCode?.name}
+                                        {...register("country")}
+                                        readOnly
+                                    />
+                                </Content2Column2>
 
-                            {errors.scheduleDate && (
-                                <InputErrors>{errors.scheduleDate.message}</InputErrors>
-                            )}
+                                <Content2Column2>
+                                    <DialingCodeInputWrapper>
+                                        <DialingCodeInput onClick={() => setModalVisible(!modalVisbile)}>
+                                            <GeneralSmText fontSize="16px" lineHeight="22px" color="#818181" margin="0.15rem 0" fontWeight="400">{selectedAreaCode?.dialCode}</GeneralSmText>
+                                            <CountryCode>
+                                                <CgChevronDownR color='rgb(215, 211, 211)' size='20px' strokeWidth="0" />
+                                            </CountryCode>
+                                        </DialingCodeInput>
+                                        <Input
+                                            name='mobileNumber'
+                                            width='100%'
+                                            type='text'
+                                            placeholder="Mobile"
+                                        />
+                                    </DialingCodeInputWrapper>
+                                    {modalVisbile ? (
+                                        <DialingCodeModalWrapper>
+                                            {areaCode.map((item, i) => (
+                                                <DialingCodeModalList id={item.id}>
+                                                    <DialingCodeModalListWrapper
+                                                        key={item.i}
+                                                        onClick={() => {
+                                                            setSelectedAreaCode(item);
+                                                            setModalVisible(false);
+                                                        }}>
+                                                        {/* <DialingCodeModalListIcon
+                                                            src={item.flag}
+                                                            alt={item.dialCode}
+                                                        ></DialingCodeModalListIcon> */}
+                                                        <DialingCodeModalListName>
+                                                            {item.name}
+                                                        </DialingCodeModalListName>
+                                                        <DialingCodeModalListName>
+                                                            {item.dialCode}
+                                                        </DialingCodeModalListName>
+                                                    </DialingCodeModalListWrapper>
+                                                </DialingCodeModalList>
+                                            ))}
+                                        </DialingCodeModalWrapper>
+                                    ) : (
+                                        ""
+                                    )}
 
-                            <CustomDiv position="relative">
-                                <Controller
-                                    control={control}
-                                    name="scheduleData"
-                                    render={({ field }) => (
-                                        <>
-                                            <DatePicker
+                                    {errors.scheduleDate && (
+                                        <InputErrors>{errors.scheduleDate.message}</InputErrors>
+                                    )}
+                                </Content2Column2>
+
+                                <Content2Column2>
+                                    <CustomDiv position="relative">
+                                        <Controller
+                                            control={control}
+                                            name="scheduleData"
+                                            render={({ field }) => (
+                                                <>
+                                                    <DatePicker onChange={(date) => field.onChange(date)}
+                                                        selected={field.value} />
+                                                    {/* <DatePicker
                                                 placeholderText="Select date"
                                                 onChange={(date) => field.onChange(date)}
                                                 selected={field.value}
                                                 showTimeInput
-                                            />
-                                            <IconHolder>
-                                                <Calendar color="#818181" size='28' />
-                                            </IconHolder>
-                                        </>
-                                    )}
-                                />
-                            </CustomDiv>
+                                            /> */}
+                                                    <IconHolder>
+                                                        <Calendar color="#b1b1b1" size='28' strokeWidth="1" />
+                                                    </IconHolder>
+                                                </>
+                                            )}
+                                        />
+                                    </CustomDiv>
+                                </Content2Column2>
 
-                            <Button width='200px' margin='10px auto'>
-                               {loading ? "loading......" : "Request A Demo"} 
-                            </Button>
+                                <Content2Column2>
+                                    <CustomDiv position="relative">
+                                        <Controller
+                                            control={control}
+                                            name="scheduleData"
+                                            render={({ field }) => (
+                                                <>
+                                                    <TimePicker onChange={(time) => field.onChange(time)} selected={field.value} defaultOpenValue={moment('00:00:00', 'HH:mm:ss')} />
+                                                    <IconHolder>
+                                                        <Clock color="#b1b1b1" size='28' strokeWidth="1" />
+                                                    </IconHolder>
+                                                </>
+                                            )}
+                                        />
+                                    </CustomDiv>
+                                </Content2Column2>
+
+                                <ContentFullColumn>
+                                    <CustomDiv display="flex" flexDirection="row" justifyContent="space-between" margin="2rem 0 0">
+                                        <CustomButton border="1px solid var(--orange)" background="var(--orange)" color="var(--white)" fontSize="15px" lineHeight="22px" fontWeight="400">
+                                            {loading ? "loading......" : "Request A Demo"}
+                                        </CustomButton>
+
+                                        <CustomLink color="var(--orange)" fontSize="15px" lineHeight="22px" textAlign="center" display="flex" justifyContent="center" margin="1rem 0 0" fontWeight="600">Get Started</CustomLink>
+
+                                    </CustomDiv>
+                                </ContentFullColumn>
+                            </ContentRow>
+
                         </Form>
                     </FormWrapper>
                 </>

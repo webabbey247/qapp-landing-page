@@ -4,15 +4,16 @@ import { Link } from "react-router-dom";
 export const ContentSection = styled.section`
   margin: 0 auto;
   background: var(--white);
-  height: 100%;
+  height: 100vh;
   justify-content: center;
   display: flex;
   align-items: center;
   padding: 2rem 0;
+
 `;
 
 export const ContentContainer = styled.div`
-width: min(100%, 38rem);
+width: min(100%, 40rem);
 `;
 
 export const ContentHeading = styled.h2`

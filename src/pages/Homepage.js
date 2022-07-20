@@ -12,7 +12,7 @@ export const FeaturesSection = styled(Section)`
   background: var(--secondary);
   backdrop-filter: blur(26px);
   padding: 2rem 0;
-  ${Section}
+  // ${Section}
 `;
 
 export const FeatureWrapper = styled.div`
@@ -20,7 +20,6 @@ export const FeatureWrapper = styled.div`
   justify-content: space-between;
   flexwrap: wrap;
   width: 100%;
-  // height: 35vh;
   > * {
     flex: 1;
   }

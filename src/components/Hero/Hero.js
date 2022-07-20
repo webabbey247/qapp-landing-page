@@ -1,7 +1,7 @@
 import React from "react";
 import {HeroContainer} from "./HeroStyles";
 import {Section} from "../../globalStyles";
-import { GeneralLgText, GeneralMdText, GeneralSmText } from "styles/GlobalCss";
+import { GeneralLgText, GeneralSmText } from "styles/GlobalCss";
 
 const Hero = () => {
   return (

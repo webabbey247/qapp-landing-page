@@ -32,7 +32,6 @@ function App() {
         <Route path='/onboarding/consumers' exact component={Consumers} />
         <Route path='/enquiry/request-demo' exact component={RequestDemo} />
 
-
       </Switch>
     </Router>
   );

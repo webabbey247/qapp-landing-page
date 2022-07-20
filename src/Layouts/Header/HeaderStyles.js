@@ -55,8 +55,8 @@ flex-direction: row;
 margin-left: auto !important;
 display: flex;
 padding-left: 0;
-margin-bottom: 0;
 list-style: none;
+margin-bottom: 15px;
 `;
 
 
@@ -66,6 +66,7 @@ line-height: 40px;
 margin-left: 20px;
 animation: FadeIn 1s cubic-bezier(.65,.05,.36,1);
 animation-fill-mode: both;
+margin-top: 15px;
 `;
 
 

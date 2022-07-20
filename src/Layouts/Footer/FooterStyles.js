@@ -39,6 +39,7 @@ export const FooterCopyright = styled.p`
   font-size: 14px;
   line-height: 22px;
   font-weight: 700;
+  margin-top: 1rem !important;
 
   @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
     font-size: 13px;

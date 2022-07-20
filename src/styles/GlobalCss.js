@@ -1,7 +1,30 @@
 import styled, {createGlobalStyle} from "styled-components";
 import { Link } from "react-router-dom";
 
+
 export const GlobalStyle = createGlobalStyle`
+
+@font-face {
+  font-family: "proximanova-bold";
+  src: url("../assets/fonts/proximanova-bold-webfont.woff") format("woff"),
+  }
+
+  @font-face {
+  font-family: "proximanova-semi-bold";
+  src: url("../assets/fonts/proximanova-sbold-webfont.woff") format("woff"),
+  }
+
+  @font-face {
+  font-family: "proximanova-regular";
+  src: url("../assets/fonts/proximanova-reg-webfont.woff") format("woff"),
+  }
+
+  @font-face {
+  font-family: "proximanova-light";
+  src: url("../assets/fonts/proximanova-light-webfont.woff") format("woff"),
+  }
+
+
 :root {
     --primary: #09354a;
     --secondary: #1b4153;
@@ -16,6 +39,10 @@ export const GlobalStyle = createGlobalStyle`
         rgba(16, 63, 87, 0.52) 7.46%,
         rgba(3, 33, 48, 0.52) 95.68%
       );
+
+      --font-bold:  font-family: 'proximanova-bold', sans-serif;
+      --font-semi-bold:  font-family: 'proximanova-semi-bold', sans-serif;
+      --font-regular:  font-family: 'proximanova-regular', sans-serif;
   }
 
   *,
@@ -37,7 +64,7 @@ export const GlobalStyle = createGlobalStyle`
     background: var(--primary);
     min-height: 100vh;
     max-height: 100%;  
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'proximanova-regular', sans-serif;
   }
   `;
 
@@ -114,7 +141,7 @@ export const CustomDiv = styled.div`
 export const CustomButton = styled.button`
   padding: 0.6rem 2rem;
   background: ${(props) => props.background || "#00b2f0"};
-  border-radius: 0;
+  border-radius: 5px;
   border: ${(props) => props.border || "1px solid #00b2f0"};
   margin: ${(props) => props.margin || "0 0 0 1rem"};
   width: ${(props) => props.width || "100%"};
@@ -171,6 +198,7 @@ export const CustomLink = styled.a`
   background: ${(props) => props.background || null};
   display: ${(props) => props.display || 'flex'};
   border-radius: ${(props) => props.borderRadius || null};
+  justify-content: ${(props) => props.justifyContent || null};
   cursor: pointer;
   text-decoration: none;
   text-transform: capitalize;
@@ -203,7 +231,7 @@ line-height:  ${(props) => props.lineHeight || "47px"};
 color: ${(props) => props.color || "inherit"};
 text-align: ${(props) => props.textAlign || "left"};
 letter-spacing: ${(props) => props.spacing || "0.18px"};
-font-family: ${(props) => props.fontFamily || "var(--font-graphix)"};
+font-family: ${(props) => props.fontFamily || "var(--font-bold)"};
 width: ${(props) => props.width || "100%"};
 padding: ${(props) => props.padding || "0"};
 margin: ${(props) => props.margin || "0"};
@@ -217,7 +245,7 @@ export const GeneralMdText = styled.h4`
   color: ${(props) => props.color || "#2b2d42"};
   text-align: ${(props) => props.textAlign || "left"};
   letter-spacing: ${(props) => props.spacing || "0.18px"};
-  font-family: ${(props) => props.fontFamily || "inherit"};
+  font-family: ${(props) => props.fontFamily || "var(--font-semi-bold)"};
   width: ${(props) => props.width || "100%"};
   padding: ${(props) => props.padding || "0"};
   margin: ${(props) => props.margin || "0"};
@@ -233,7 +261,7 @@ export const GeneralSmText = styled.p`
   color: ${(props) => props.color || ""};
   padding: ${(props) => props.padding || "0"};
   margin: ${(props) => props.margin || "0"};
-  font-family: ${(props) => props.fontFamily || "inherit"};
+  font-family: ${(props) => props.fontFamily || "var(--font-regular)"};
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "100%"};
   text-transform: ${(props) => props.textTransform || "lowercase"};

@@ -2,7 +2,7 @@
 .react-datepicker__input-container input {
   background-color: var(--gray-color);
 border: 1px solid var(--gray-color);
-height: 3rem;
+height: 3.5rem;
 line-height: 17px;
 padding: 0 16px;
 width: 100%;
@@ -10,9 +10,44 @@ border-radius: 5px;
 font-weight: 400;
 box-sizing: border-box;
 color: #818181;
-font-size: 13px;
+font-size: 15px;
 margin-bottom: 1rem;
 }
+
+.react-datepicker__input-container input:focus {
+  color: var(--orange);
+border: 1px solid var(--orange);
+}
+
+.ant-picker {
+  flex: 0 0 100% !important;
+  border-radius: 5px !important;
+  height: 3.5rem !important; 
+}
+
+.ant-picker-input, .ant-picker-focused {
+  border-color: var(--orange) !important;
+  flex: 0 0 100% !important;
+  height: 3.5rem !important; 
+  max-width: 100% !important;
+  width: 100%;
+  border-radius: 5px !important;
+}
+
+.ant-picker-input > input:focus, .ant-picker-input > input-focused {
+  border-color: var(--orange) !important;
+  border-right-width: 1px;
+}
+
+.ant-picker-input > input:hover {
+  border-color: var(--orange) !important;
+  border-right-width: 1px;
+}
+
+.ant-picker-suffix {
+  display: none !important;
+}
+
 
 /* Document
    ========================================================================== */
