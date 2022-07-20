@@ -286,7 +286,7 @@ const MFIForm = () => {
                 <FormWrapper>
                     <GeneralMdText margin="1rem 0" fontSize="36px" lineHeight="40px" textAlign="center" color="var(--header-color)" textTransform="capitalize" fontWeight="500">Congratulations {fullName}</GeneralMdText>
                     <GeneralSmText fontSize="19px" lineHeight="26px" textAlign="center" color="var(--header-color)" textTransform="unset" fontWeight="500" margin="0 0 1rem 0" padding="1rem 0"> Your request for a demo has been scheduled for {moment(startDate).format('MMMM Do YYYY, h:mm:ss, a')}.
-                        Thank You!</GeneralSmText>
+                        Thank You!</GeneralSmText>git remote -v
                     <ContentCta to='/'>Return Home</ContentCta>
                 </FormWrapper>
             ) : (

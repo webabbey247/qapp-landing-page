@@ -161,11 +161,11 @@ export const CustomButton = styled.button`
     border: 1px solid #00b2f0;
     color: var(--white);
   }
-  //   &:hover {
-    //     background: #252b32;
-    //     border: 1px solid #252b32;
-    //     color: var(--white);
-    //   }
+    &:hover {
+         background: #031b26;
+        border: 1px solid #031b26;
+        color: var(--white);
+      }
   `;
 
 
@@ -202,6 +202,10 @@ export const CustomLink = styled.a`
   cursor: pointer;
   text-decoration: none;
   text-transform: capitalize;
+
+  &:hover {
+    color: #031b26;
+  }
 `;
 
 export const CustomRouterLink = styled(Link)`
@@ -221,6 +225,11 @@ export const CustomRouterLink = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   text-transform: capitalize;
+
+  &:hover {
+    background: #031b26;
+    color: var(--white);
+  }
 `;
 
 

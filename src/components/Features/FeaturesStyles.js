@@ -126,6 +126,11 @@ export const FeaturesCta = styled.a`
   width: 140px;
   font-weight: 400;
 
+  &:hover {
+    background: #031b26;
+    color: var(--white);
+  }
+
   @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
     margin-left: 0;
     width: 100%;
