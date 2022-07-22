@@ -10,13 +10,16 @@ import {
   NavLanguageDropdownIcon,
   NavMenuWrapper,
   NavMenuUl,
-  MenuNavLi
+  MenuNavLi,
+  NavNightMood
 } from "./HeaderStyles";
-import { FaGlobe, FaCaretDown } from "react-icons/fa";
+import { FaGlobe, FaCaretDown, FaSun } from "react-icons/fa";
 import { Container } from "../../globalStyles";
 import { IconContext } from "react-icons";
 import { qappLogo } from "../../assets/images";
 import { CustomRouterLink } from "styles/GlobalCss";
+import { Calendar, Sunrise } from "react-feather";
+
 
 const Header = () => {
   return (
@@ -39,21 +42,19 @@ const Header = () => {
                 <NavLanguage>
                 <NavLanguageText>English</NavLanguageText>
                 <NavLanguageIcon>
-                  <FaGlobe />
+                  <FaGlobe size="18px" />
                 </NavLanguageIcon>
-                {/* <NavLanguageDropdownIcon>
-                  <FaCaretDown />
-                </NavLanguageDropdownIcon> */}
+                {/* <NavNightMood>
+                  <FaSun size="18px" />
+                </NavNightMood> */}
               </NavLanguage>
                 </MenuNavLi>
               </NavMenuUl>
             </NavMenuWrapper>
-
           </NavbarWrapper>
         </Container>
       </Menu>
     </IconContext.Provider>
   );
 };
-
 export default Header;

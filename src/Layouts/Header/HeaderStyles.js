@@ -93,6 +93,10 @@ export const NavLanguageIcon = styled.span`
   margin-left: 0.2rem;
 `;
 
+export const NavNightMood = styled.span`
+  margin-left: 1rem;
+`;
+
 export const NavLanguageDropdownIcon = styled.span`
   margin-left: 0.2rem;
 `;

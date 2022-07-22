@@ -24,11 +24,11 @@ function App() {
       <Switch>
         <Route path='/' exact component={Homepage} />
         <Route
-          path='/financial-institutions/request-demo'
+          path='/financial-institutions/demo'
           exact
           component={FinancialInstitutions}
         />
-        <Route path='/onboarding/merchants' exact component={Merchants} />
+        <Route path='/merchants/demo' exact component={Merchants} />
         <Route path='/onboarding/consumers' exact component={Consumers} />
         <Route path='/enquiry/request-demo' exact component={RequestDemo} />
 

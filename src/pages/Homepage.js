@@ -6,13 +6,15 @@ import PageLayout from "../Layouts/PageLayout";
 import {Section, Container} from "../globalStyles";
 
 import {Features} from "../components";
-import { Content4Column4, ContentRow } from "styles/GlobalCss";
+import { Content4Column4, ContentRow, SiteContainer } from "styles/GlobalCss";
 
 export const FeaturesSection = styled(Section)`
   background: var(--secondary);
   backdrop-filter: blur(26px);
   padding: 2rem 0;
-  // ${Section}
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const FeatureWrapper = styled.div`
@@ -40,7 +42,7 @@ const Homepage = () => {
     <PageLayout>
       <Hero />
       <FeaturesSection>
-        <Container>
+        <SiteContainer>
           <FeatureWrapper>
             <ContentRow>
               <Content4Column4>
@@ -57,7 +59,7 @@ const Homepage = () => {
               </Content4Column4>
             </ContentRow>
           </FeatureWrapper>
-        </Container>
+        </SiteContainer>
       </FeaturesSection>
     </PageLayout>
   );

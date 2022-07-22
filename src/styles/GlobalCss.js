@@ -26,7 +26,7 @@ export const GlobalStyle = createGlobalStyle`
 
 
 :root {
-    --primary: #09354a;
+    --primary: #1A3C4A;
     --secondary: #1b4153;
     --header-color: #163e57;
     --orange: #ff6501;
@@ -63,7 +63,7 @@ export const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     background: var(--primary);
     min-height: 100vh;
-    max-height: 100%;  
+    max-height: 100vh;  
     font-family: 'proximanova-regular', sans-serif;
   }
   `;
@@ -75,7 +75,7 @@ export const MainContainer = styled.main`
 
 
 export const SiteContainer = styled.div`
-  width: min(100%, 75rem);
+  width: min(100%, 85rem);
 `;
 
 export const ContentRow = styled.div`
@@ -141,9 +141,9 @@ export const CustomDiv = styled.div`
 export const CustomButton = styled.button`
   padding: 0.6rem 2rem;
   background: ${(props) => props.background || "#00b2f0"};
-  border-radius: 5px;
+  border-radius: 8px;
   border: ${(props) => props.border || "1px solid #00b2f0"};
-  margin: ${(props) => props.margin || "0 0 0 1rem"};
+  margin: ${(props) => props.margin || "0"};
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "47.77px"};
   text-transform: ${(props) => props.textTransform || "unset"};

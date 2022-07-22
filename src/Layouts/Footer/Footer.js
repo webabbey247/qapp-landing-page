@@ -1,5 +1,5 @@
 import React from "react";
-import {Container} from "../../globalStyles";
+import { SiteContainer } from "styles/GlobalCss";
 import {
   FooterSection,
   FooterWrapper,
@@ -12,7 +12,7 @@ import {
 const Footer = () => {
   return (
     <FooterSection>
-      <Container>
+      <SiteContainer>
         <FooterWrapper>
           <FooterLTR>
             <FooterCopyright>
@@ -26,7 +26,7 @@ const Footer = () => {
             <FooterNavLinks to='/privacy-policy'>Privacy Policy</FooterNavLinks>
           </FooterRTL>
         </FooterWrapper>
-      </Container>
+      </SiteContainer>
     </FooterSection>
   );
 };

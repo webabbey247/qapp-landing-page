@@ -2,8 +2,10 @@ import styled from "styled-components";
 import {Link} from "react-router-dom";
 
 export const FooterSection = styled.footer`
-  background-color: var(--primary);
-  padding: 0.5rem 0;
+  background-color: transparent;
+  padding: 0.8rem 0;
+  display:flex;
+  justify-content: center;
 `;
 
 export const FooterWrapper = styled.div`
@@ -39,7 +41,7 @@ export const FooterCopyright = styled.p`
   font-size: 14px;
   line-height: 22px;
   font-weight: 700;
-  margin-top: 1rem !important;
+  margin-bottom: 0;
 
   @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
     font-size: 13px;
@@ -56,7 +58,6 @@ export const FooterRTL = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
-  margin-top: 1rem;
 
   @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
     margin: 0;
@@ -78,6 +79,7 @@ export const FooterNavLinks = styled(Link)`
   font-size: 14px;
   line-height: 22px;
   font-weight: 700;
+
   @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
     font-size: 13px;
   }

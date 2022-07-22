@@ -1,37 +1,46 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+const video = require('../../assets/images/video-placeholder.png')
+
 export const ContentSection = styled.section`
   margin: 0 auto;
   background: var(--white);
-  height: 100vh;
   justify-content: center;
   display: flex;
   align-items: center;
-  padding: 2rem 0;
+  padding: 7.3rem 0;
+  flex-direction: row;
+  width: 100%;
+`;
 
+export const MerchantSection = styled.section`
+  margin: 0 auto;
+  background: var(--white);
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 4.3rem 0;
+  flex-direction: row;
+  width: 100%;
 `;
 
 export const ContentContainer = styled.div`
-width: min(100%, 40rem);
+width: min(100%, 85rem);
 `;
 
-export const ContentHeading = styled.h2`
-  font-weight: 500;
-  font-size: 36px;
-  line-height: 40px;
-  text-align: center;
-  color: var(--header-color);
-  margin: 0.5rem 0;
-  padding: 1.5rem 0;
+export const ContentVideoContainer = styled.div`
+width: auto;
+margin-bottom: 0;
+`;
 
-  @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
-    font-size: 30px;
-  }
-
-  @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
-    font-size: 25px;
-  }
+export const ContentVideoPlaceholder = styled.div`
+background-image: url("${video}");
+background-size: cover;
+background-position: center;
+height: 350px;
+background-repeat: no-repeat;
+border-radius: 8px;
 `;
 
 export const ContentIconHolder = styled.div`
