@@ -136,7 +136,7 @@ export const CustomDiv = styled.div`
   max-width:  ${(props) => props.maxWidth || "100%"};
   width: ${(props) => props.width || "100%"};
   flex: ${(props) => props.flex || "0 0 100%"};
-
+  border: ${(props) => props.border || "null"};
 `;
 
 export const CustomButton = styled.button`

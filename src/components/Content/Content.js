@@ -20,13 +20,15 @@ import {
   ContentBankChild,
   ContentBankChildLTR,
   ContentBankLogo,
-  ContentBankChildRTL
+  ContentBankChildRTL,
+  ContentBankCta
 } from "./ContentStyles";
 import { Container } from "../../globalStyles";
 import { MFIForm, MerchantForm } from "components/Form";
-import { Content2Column2, ContentFullColumn, ContentRow, CustomDiv, GeneralMdText, GeneralSmText } from "styles/GlobalCss";
+import { Content2Column2, ContentFullColumn, ContentRow, CustomDiv, CustomRouterLink, GeneralMdText, GeneralSmText } from "styles/GlobalCss";
 import { BiArrowBack, BiSearch, BiCaretRight } from "react-icons/bi";
 import { myBankIcon, gtbIcon, kudaIcon, bankPlaceholder } from "assets/images";
+import { Link } from "react-router-dom";
 
 
 const Content = ({ pageType }) => {
@@ -135,13 +137,15 @@ const Content = ({ pageType }) => {
             <ContentRow>
 
               <ContentFullColumn>
+              <Link to="/">
                 <ContentBackIcon>
                   <BiArrowBack size="28" color="var(--icon-color)" />
                 </ContentBackIcon>
+                </Link>
               </ContentFullColumn>
 
               <ContentFullColumn>
-                <GeneralMdText textAlign="center" color="var(--orange)" fontSize="30px" lineHeight="40px" fontWeight="700" textTransform="unset">
+                <GeneralMdText textAlign="center" color="var(--orange)" fontSize="30px" lineHeight="40px" fontWeight="600" textTransform="unset">
                   List of Financial Institution you bank with
                 </GeneralMdText>
 
@@ -179,8 +183,14 @@ const Content = ({ pageType }) => {
                         <BiCaretRight color="var(--icon-color)" size='28' strokeWidth="0" />
                       </ContentBankChildRTL>
                     </ContentBankChild>
+
+                    <ContentBankCta>
+                Want to bank with a new Financial Institution?
+                </ContentBankCta>
                   </ContentSearchFormContainer>
                 </ContentBankList>
+
+                
               </ContentFullColumn>
             </ContentRow>
           </ContentContainer>
@@ -195,13 +205,15 @@ const Content = ({ pageType }) => {
             <ContentRow>
 
               <ContentFullColumn>
+                <Link to="/">
                 <ContentBackIcon>
                   <BiArrowBack size="28" color="var(--icon-color)" />
                 </ContentBackIcon>
+                </Link>
               </ContentFullColumn>
 
               <ContentFullColumn>
-                <GeneralMdText textAlign="center" color="var(--orange)" fontSize="30px" lineHeight="40px" fontWeight="700" textTransform="unset">
+                <GeneralMdText textAlign="center" color="var(--orange)" fontSize="30px" lineHeight="40px" fontWeight="600" textTransform="unset">
                 Bank with other Financial Institution
                 </GeneralMdText>
 

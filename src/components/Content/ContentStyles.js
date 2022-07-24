@@ -112,6 +112,7 @@ export const ContentCta = styled(Link)`
 
 export const ContentBackIcon = styled.div`
 margin: 0 0 2rem;
+cursor: pointer;
 `;
 
 export const ContentSearchForm = styled.div`
@@ -216,4 +217,20 @@ width: 30px;
 
 export const ContentBankChildRTL = styled.div`
 padding-top: 5px;
+`;
+
+export const ContentBankCta = styled.a`
+justify-content: center;
+display: flex;
+text-decoration: underline;
+padding: 20px 0;
+text-align: center;
+font-size: 20px;
+line-height: 24.43px;
+color: var(--orange);
+font-weight: 700;
+
+&:hover {
+  color: var(--primary);
+}
 `;
