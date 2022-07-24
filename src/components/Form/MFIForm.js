@@ -7,7 +7,7 @@ import { Calendar } from "react-feather";
 import { DatePicker } from 'antd';
 import Select from 'react-dropdown-select';
 import 'antd/dist/antd.css';
-import { Content2Column2, ContentFullColumn, ContentRow, CustomDiv, GeneralMdText, GeneralSmText, CustomLink, CustomButton } from "styles/GlobalCss";
+import { Content2Column2, ContentFullColumn, ContentRow, CustomDiv, GeneralMdText, CustomButton } from "styles/GlobalCss";
 
 
 const FormWrapper = styled.div`
@@ -106,9 +106,9 @@ top: 28%;
 
 
 const MFIForm = () => {
-    const [loading, setLoading] = useState(false);
+    // const [loading, setLoading] = useState(false);
     const [areaCode, setAreaCode] = useState([]);
-    const [setSelectedAreaCode] = useState("");
+    // const [setSelectedAreaCode] = useState("");
     // const [startDate, setStartDate] = useState(new Date());
 
 
@@ -126,12 +126,12 @@ const MFIForm = () => {
                 });
 
                 setAreaCode(areaCodeData);
-                if (areaCodeData.length > 0) {
-                    let defaultAreaData = areaCodeData.filter((a) => a.code === "NG");
-                    if (defaultAreaData.length > 0) {
-                        setSelectedAreaCode(defaultAreaData[0]);
-                    }
-                }
+                // if (areaCodeData.length > 0) {
+                //     let defaultAreaData = areaCodeData.filter((a) => a.code === "NG");
+                //     if (defaultAreaData.length > 0) {
+                //         setSelectedAreaCode(defaultAreaData[0]);
+                //     }
+                // }
             })
             .catch((err) => {
                 console.error("Request failed", err);
@@ -151,7 +151,7 @@ const MFIForm = () => {
     const { errors } = formState;
 
     const requestDemo = async (data) => {
-        setLoading(true);
+        // setLoading(true);
         const userData = {
             name: data.bankName,
             rcNumber: data.rcNumber,
@@ -160,7 +160,7 @@ const MFIForm = () => {
         };
 
         console.log("form info", userData);
-        setLoading(false);
+        // setLoading(false);
     };
 
     return (

@@ -67,13 +67,13 @@ const Input = styled.input`
   }
 `;
 
-const InputErrors = styled.div`
-  width: 100%;
-  font-size: 13px !important;
-  color: #dc3545;
-  margin: 0.5rem 0;
-  padding: 0;
-`;
+// const InputErrors = styled.div`
+//   width: 100%;
+//   font-size: 13px !important;
+//   color: #dc3545;
+//   margin: 0.5rem 0;
+//   padding: 0;
+// `;
 
 const IconHolder = styled.div`
 display: flex;
@@ -92,7 +92,7 @@ top: 28%;
 
 const MerchantForm = () => {
   const [areaCode, setAreaCode] = useState([]);
-  const [setSelectedAreaCode] = useState("");
+  // const [setSelectedAreaCode] = useState("");
 
   const MerchantOption = [
     { value: 'Dispatcher', label: 'Dispatcher' },
@@ -115,12 +115,12 @@ const MerchantForm = () => {
         });
 
         setAreaCode(areaCodeData);
-        if (areaCodeData.length > 0) {
-          let defaultAreaData = areaCodeData.filter((a) => a.code === "NG");
-          if (defaultAreaData.length > 0) {
-            setSelectedAreaCode(defaultAreaData[0]);
-          }
-        }
+        // if (areaCodeData.length > 0) {
+        //   let defaultAreaData = areaCodeData.filter((a) => a.code === "NG");
+        //   if (defaultAreaData.length > 0) {
+        //     setSelectedAreaCode(defaultAreaData[0]);
+        //   }
+        // }
       })
       .catch((err) => {
         console.error("Request failed", err);

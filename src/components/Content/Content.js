@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from "styled-components";
+// import styled from "styled-components";
 import {
   ContentSection,
   ContentBankSection,
@@ -33,8 +33,8 @@ import { Link } from "react-router-dom";
 
 const Content = ({ pageType }) => {
 
-  const [dispatchVideo, setDispatchVideo] = useState(true)
-  const [ecommerceVideo, setEcommerceVideo] = useState(false)
+  const [dispatchVideo] = useState(true)
+  const [ecommerceVideo] = useState(false)
 
   return (
     <>
