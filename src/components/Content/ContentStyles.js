@@ -14,6 +14,17 @@ export const ContentSection = styled.section`
   width: 100%;
 `;
 
+export const ContentBankSection = styled.section`
+  margin: 0 auto;
+  background: #F7F7F7;
+  justify-content: center;
+  display: flex;
+  align-items: center;
+  padding: 7.3rem 0;
+  flex-direction: row;
+  width: 100%;
+`;
+
 export const MerchantSection = styled.section`
   margin: 0 auto;
   background: var(--white);
@@ -96,4 +107,113 @@ export const ContentCta = styled(Link)`
   color: var(--white);
   width: 220px;
   font-weight: 600;
+`;
+
+
+export const ContentBackIcon = styled.div`
+margin: 0 0 2rem;
+`;
+
+export const ContentSearchForm = styled.div`
+padding: 1rem 0;
+display: flex;
+justify-content: center;
+`;
+
+export const ContentSearchFormContainer = styled.div`
+width: min(100%,45rem);
+position: relative;
+`;
+
+export const SearchInput = styled.input`
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--primary);
+  height: 54px;
+  padding: 0 4rem;
+  width: ${({ width }) => (width ? width : "100%")};
+  border-radius: 0;
+  font-weight: 600;
+  box-sizing: border-box;
+  color: var(--primary);
+  font-size: 14px;
+  line-height: 17.05px;
+  margin-bottom: 1rem;
+  position: relative;
+
+
+  &.invalid {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3E%3Cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3E%3Ccircle r='.5'/%3E%3Ccircle cx='3' r='.5'/%3E%3Ccircle cy='3' r='.5'/%3E%3Ccircle cx='3' cy='3' r='.5'/%3E%3C/svg%3E") !important;
+    border-color: rgba(220, 53, 69, 0.5) !important;
+    color: #dc3545;
+    background-repeat: no-repeat;
+    background-position: right calc(0.375em + 0.1875rem) center;
+    background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem);
+  }
+
+  &::placeholder {
+    font-size: 14px;
+    line-height: 17.05px;
+    font-weight: 400;
+    color: var(--primary);
+    opacity: 0.2;
+  }
+
+  &:focus {
+    color: var(--orange);
+    border-color: var(--orange);
+    outline: 0;
+    box-shadow: none !important;
+    background-color: transparent;
+  }
+`;
+
+
+export const SearchIconHolder = styled.div`
+display: flex;
+flex-direction: row;
+-moz-box-pack: center;
+justify-content: center;
+-moz-box-align: center;
+align-items: center;
+margin: 0px;
+padding: 0px;
+position: absolute;
+left: 0%;
+top: 20%;
+`;
+
+export const ContentBankList = styled.div`
+display: flex;
+flex-drection: column;
+justify-content: center;
+`;
+
+export const ContentBankChild = styled.div`
+display: flex;
+flex-drection: row;
+justify-content: space-between;
+background: var(--white);
+padding: 1rem;
+border-radius: 8px;
+margin: 15px 0;
+`;
+
+
+export const ContentBankChildLTR = styled.div`
+display: flex;
+flex-drection: row;
+justify-content: flex-start;
+padding-top: 5px;
+`;
+
+
+export const ContentBankLogo = styled.img`
+margin-right: 1rem;
+height: 30px;
+width: 30px;
+`;
+
+export const ContentBankChildRTL = styled.div`
+padding-top: 5px;
 `;

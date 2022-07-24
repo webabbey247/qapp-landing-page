@@ -31,7 +31,7 @@ const Form = styled.form`
 const Input = styled.input`
   background-color: var(--white);
   border: 1px solid var(--primary);
-  height: 48px;
+  height: 62px;
   padding: 0 16px;
   width: ${({ width }) => (width ? width : "100%")};
   border-radius: 8px;
@@ -87,7 +87,7 @@ margin: 0px;
 padding: 0px;
 position: absolute;
 right: 3%;
-top: 20%;
+top: 28%;
 `;
 
 const MFIForm = () => {

@@ -9,8 +9,10 @@ import Homepage from "./pages/Homepage";
 import FinancialInstitutions from "./pages/FinancialInstitutions";
 import Merchants from "./pages/Merchants";
 import Consumers from "./pages/Consumers";
-import RequestDemo from "./pages/RequestDemo";
+import MyBanks from "pages/MyBanks";
+import OnboardedBanks from "pages/OnboardedBanks";
 import "./styles/normalize.css";
+import "./styles/responsive.css";
 
 
 axios.defaults.withCredentials = true;
@@ -30,8 +32,8 @@ function App() {
         />
         <Route path='/merchants/demo' exact component={Merchants} />
         <Route path='/onboarding/consumers' exact component={Consumers} />
-        <Route path='/enquiry/request-demo' exact component={RequestDemo} />
-
+        <Route path='/financial-institutions/my-banks' exact component={MyBanks} />
+        <Route path='/financial-institutions/onboarded-banks' exact component={OnboardedBanks} />
       </Switch>
     </Router>
   );

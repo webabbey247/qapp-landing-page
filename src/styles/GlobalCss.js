@@ -31,6 +31,7 @@ export const GlobalStyle = createGlobalStyle`
     --header-color: #163e57;
     --orange: #ff6501;
     --icon-border-color: #235a74;
+    --icon-color: #292D32;
     --gray-color: #ECECEC;
     --input-color: #818181;
     --white: #ffffff;

@@ -8,8 +8,6 @@ import {
   ContentIconHolder,
   ContentIcon,
 } from "../components/Content/ContentStyles";
-import {mfiLogo} from "../assets/images";
-import { SiteContainer } from "styles/GlobalCss";
 
 
 const Merchants = () => {

@@ -1,15 +1,7 @@
 import React from "react";
-import styled from "styled-components";
-import {HeroContainer} from "./HeroStyles";
+import {HeroSection, HeroContainer} from "./HeroStyles";
 import { GeneralLgText, GeneralSmText } from "styles/GlobalCss";
 
-export const HeroSection = styled.section`
-  background: transparent;
-  padding: 7rem 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`;
 const Hero = () => {
   return (
     <HeroSection>
