@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {
   ContentSection,
@@ -32,8 +32,12 @@ import { Link } from "react-router-dom";
 
 
 const Content = ({ pageType }) => {
+
+  const [dispatchVideo, setDispatchVideo] = useState(true)
+  const [ecommerceVideo, setEcommerceVideo] = useState(false)
+
   return (
-    <Fragment>
+    <>
       {pageType === "finance" && (
         <ContentSection>
           <ContentContainer>
@@ -45,7 +49,9 @@ const Content = ({ pageType }) => {
                     {/* <video width="550" frameBorder="0" height="350" preload="none" autoPlay="true" loop="true" playsInline="" poster={video}>
                 <source src={videoMP4} type="video/mp4" />
             </video> */}
+
                     <iframe width="550" frameBorder="0" height="350" src="https://www.youtube.com/embed/pygGug3TCaI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
                   </ContentVideoContainer>
                 </CustomDiv>
               </Content2Column2>
@@ -69,14 +75,20 @@ const Content = ({ pageType }) => {
                     {/* <video width="550" frameBorder="0" height="350" preload="none" autoPlay="true" loop="true" playsInline="" poster={video}>
                 <source src={videoMP4} type="video/mp4" />
             </video> */}
-                    <iframe width="550" frameBorder="0" height="350" src="https://www.youtube.com/embed/pygGug3TCaI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+                    {dispatchVideo ? (
+                      <iframe width="550" frameBorder="0" height="350" src="https://www.youtube.com/embed/pygGug3TCaI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    ) : (
+                      <iframe width="550" frameBorder="0" height="350" src="https://www.youtube.com/embed/pygGug3TCaI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                    )}
+
                   </ContentVideoContainer>
                   <GeneralMdText color="var(--orange)" margin="1rem 0 0.6rem" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
-                    Dispatch Merchant: How it works
+                    Dispatch Merchant: {dispatchVideo ? "" : "How it works"}
                   </GeneralMdText>
 
                   <GeneralMdText color="var(--primary)" margin="0" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
-                    Ecommerce Merchant: How it works
+                    Ecommerce Merchant: {ecommerceVideo ? "" : "How it works"}
                   </GeneralMdText>
                 </CustomDiv>
               </Content2Column2>
@@ -137,10 +149,10 @@ const Content = ({ pageType }) => {
             <ContentRow>
 
               <ContentFullColumn>
-              <Link to="/">
-                <ContentBackIcon>
-                  <BiArrowBack size="28" color="var(--icon-color)" />
-                </ContentBackIcon>
+                <Link to="/">
+                  <ContentBackIcon>
+                    <BiArrowBack size="28" color="var(--icon-color)" />
+                  </ContentBackIcon>
                 </Link>
               </ContentFullColumn>
 
@@ -185,12 +197,12 @@ const Content = ({ pageType }) => {
                     </ContentBankChild>
 
                     <ContentBankCta>
-                Want to bank with a new Financial Institution?
-                </ContentBankCta>
+                      Want to bank with a new Financial Institution?
+                    </ContentBankCta>
                   </ContentSearchFormContainer>
                 </ContentBankList>
 
-                
+
               </ContentFullColumn>
             </ContentRow>
           </ContentContainer>
@@ -198,7 +210,7 @@ const Content = ({ pageType }) => {
       )}
 
 
-{pageType === "onboarded" && (
+      {pageType === "onboarded" && (
         <ContentBankSection>
           <ContentContainer>
 
@@ -206,15 +218,15 @@ const Content = ({ pageType }) => {
 
               <ContentFullColumn>
                 <Link to="/">
-                <ContentBackIcon>
-                  <BiArrowBack size="28" color="var(--icon-color)" />
-                </ContentBackIcon>
+                  <ContentBackIcon>
+                    <BiArrowBack size="28" color="var(--icon-color)" />
+                  </ContentBackIcon>
                 </Link>
               </ContentFullColumn>
 
               <ContentFullColumn>
                 <GeneralMdText textAlign="center" color="var(--orange)" fontSize="30px" lineHeight="40px" fontWeight="600" textTransform="unset">
-                Bank with other Financial Institution
+                  Bank with other Financial Institution
                 </GeneralMdText>
 
                 <ContentSearchForm>
@@ -272,7 +284,7 @@ const Content = ({ pageType }) => {
       )}
 
 
-    </Fragment>
+    </>
   );
 };
 

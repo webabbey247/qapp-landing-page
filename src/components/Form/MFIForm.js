@@ -90,6 +90,23 @@ right: 3%;
 top: 28%;
 `;
 
+const CustomButtonCta = styled.a`
+padding: 0.6rem 2rem;
+background: var(--orange);
+border-radius: 8px;
+border: 1px solid var(--orange);
+margin: 1rem 0;
+width: 100%;
+text-transform: unset;
+color: var(--white);
+font-size: 14px;
+font-weight: 600;
+line-height: 17.03px;
+text-align: center;
+cursor: pointer;
+`;
+
+
 const MFIForm = () => {
     const [loading, setLoading] = useState(false);
     const [areaCode, setAreaCode] = useState([]);
@@ -154,7 +171,7 @@ const MFIForm = () => {
                 <Form onSubmit={handleSubmit(requestDemo)}>
                     <ContentRow>
                         <ContentFullColumn>
-                        <GeneralMdText fontSize="24px" margin="0 0 20px" lineHeight="49px" textAlign="left" color="var(--orange)" textTransform="capitalize" fontWeight="600">Financial Institutions</GeneralMdText>
+                            <GeneralMdText fontSize="24px" margin="0 0 20px" lineHeight="49px" textAlign="left" color="var(--orange)" textTransform="capitalize" fontWeight="600">Financial Institutions</GeneralMdText>
                         </ContentFullColumn>
                         <Content2Column2>
                             {errors.bankName && (
@@ -233,6 +250,12 @@ const MFIForm = () => {
                                 <CustomButton border="1px solid var(--orange)" background="var(--white)" color="var(--orange)" fontSize="14px" lineHeight="17.03px" fontWeight="600" height="48px">
                                     Get Started
                                 </CustomButton>
+
+                                {/* <Link to="/">
+                                <CustomButtonCta>
+                                        Get Started
+                                    </CustomButtonCta>
+                                    </Link> */}
 
                             </CustomDiv>
                         </ContentFullColumn>

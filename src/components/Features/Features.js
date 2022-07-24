@@ -101,7 +101,7 @@ const Features = ({ pageType }) => {
             <GeneralSmText color="var(--white)" padding="0.5rem 1rem" fontSize="14px" lineHeight="17.05px" height="55px" textAlign="center" textTransform="unset">
             All your Gaming. Betting. Social Media needs all in one SUPER APP.
             </GeneralSmText>
-            <CustomRouterLink to="/onboarding/consumers" fontSize="13px" lineHeight="25px" color="var(--white);" textAlign="center" float="center" borderRadius="5px" fontWeight="600" padding="8px 30px" background="var(--orange)" width="170px" display="flex" justifyContent="center" margin="10px auto 0">Download Now</CustomRouterLink>
+            <CustomRouterLink to="/" fontSize="13px" lineHeight="25px" color="var(--white);" textAlign="center" float="center" borderRadius="5px" fontWeight="600" padding="8px 30px" background="var(--orange)" width="170px" display="flex" justifyContent="center" margin="10px auto 0">Download Now</CustomRouterLink>
           </FeaturesCardBottom>
         </FeaturesCard>
       )}
