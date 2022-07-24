@@ -267,9 +267,11 @@ export const CustomRouterLink = styled(Link)`
   }
   
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+    width: 100%;
   }
   
   @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+    width: 100%;
   }
 `;
 
