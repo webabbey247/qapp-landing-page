@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
-import { CgChevronDownR } from "react-icons/cg";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { Calendar, Sunrise } from "react-feather";
+import { Calendar } from "react-feather";
 import { DatePicker } from 'antd';
 import Select from 'react-dropdown-select';
 import 'antd/dist/antd.css';
-import moment from "moment";
 import { Content2Column2, ContentFullColumn, ContentRow, CustomDiv, GeneralMdText, GeneralSmText, CustomLink, CustomButton } from "styles/GlobalCss";
 
 
@@ -90,27 +88,27 @@ right: 3%;
 top: 28%;
 `;
 
-const CustomButtonCta = styled.a`
-padding: 0.6rem 2rem;
-background: var(--orange);
-border-radius: 8px;
-border: 1px solid var(--orange);
-margin: 1rem 0;
-width: 100%;
-text-transform: unset;
-color: var(--white);
-font-size: 14px;
-font-weight: 600;
-line-height: 17.03px;
-text-align: center;
-cursor: pointer;
-`;
+// const CustomButtonCta = styled.a`
+// padding: 0.6rem 2rem;
+// background: var(--orange);
+// border-radius: 8px;
+// border: 1px solid var(--orange);
+// margin: 1rem 0;
+// width: 100%;
+// text-transform: unset;
+// color: var(--white);
+// font-size: 14px;
+// font-weight: 600;
+// line-height: 17.03px;
+// text-align: center;
+// cursor: pointer;
+// `;
 
 
 const MFIForm = () => {
     const [loading, setLoading] = useState(false);
     const [areaCode, setAreaCode] = useState([]);
-    const [selectedAreaCode, setSelectedAreaCode] = useState("");
+    const [setSelectedAreaCode] = useState("");
     // const [startDate, setStartDate] = useState(new Date());
 
 
@@ -145,7 +143,7 @@ const MFIForm = () => {
         rcNumber: yup.string().trim().required("Kindly provide your RC Number"),
     });
 
-    const { register, handleSubmit, control, reset, formState } = useForm({
+    const { register, handleSubmit, control, formState } = useForm({
         resolver: yupResolver(validationSchema),
     });
 
@@ -244,7 +242,7 @@ const MFIForm = () => {
                             <CustomDiv display="flex" flexDirection="column" margin="-1rem 0" padding="0">
 
                                 <CustomButton border="1px solid var(--orange)" background="var(--orange)" color="var(--white)" fontSize="14px" lineHeight="17.03px" fontWeight="600" margin="1rem 0" height="48px">
-                                    {loading ? "loading......" : "Request a Demo"}
+                                  Request a Demo
                                 </CustomButton>
 
                                 <CustomButton border="1px solid var(--orange)" background="var(--white)" color="var(--orange)" fontSize="14px" lineHeight="17.03px" fontWeight="600" height="48px">

@@ -25,7 +25,7 @@ import {
 } from "./ContentStyles";
 import { Container } from "../../globalStyles";
 import { MFIForm, MerchantForm } from "components/Form";
-import { Content2Column2, ContentFullColumn, ContentRow, CustomDiv, CustomRouterLink, GeneralMdText, GeneralSmText } from "styles/GlobalCss";
+import { Content2Column2, ContentFullColumn, ContentRow, CustomDiv, GeneralMdText } from "styles/GlobalCss";
 import { BiArrowBack, BiSearch, BiCaretRight } from "react-icons/bi";
 import { myBankIcon, gtbIcon, kudaIcon, bankPlaceholder } from "assets/images";
 import { Link } from "react-router-dom";

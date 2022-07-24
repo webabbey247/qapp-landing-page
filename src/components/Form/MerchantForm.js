@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
 import styled from "styled-components";
-import { CgChevronDownR } from "react-icons/cg";
 import { Controller, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
@@ -9,8 +7,7 @@ import { Calendar } from "react-feather";
 import { DatePicker } from 'antd';
 import Select from 'react-dropdown-select';
 import 'antd/dist/antd.css';
-import moment from "moment";
-import { Content2Column2, ContentFullColumn, ContentRow, CustomDiv, GeneralMdText, GeneralSmText, CustomLink, CustomButton } from "styles/GlobalCss";
+import { Content2Column2, ContentFullColumn, ContentRow, CustomDiv, GeneralMdText, CustomButton } from "styles/GlobalCss";
 
 
 
@@ -94,10 +91,8 @@ top: 28%;
 
 
 const MerchantForm = () => {
-  const [loading, setLoading] = useState(false);
   const [areaCode, setAreaCode] = useState([]);
-  const [selectedAreaCode, setSelectedAreaCode] = useState("");
-  const [startDate, setStartDate] = useState(new Date());
+  const [setSelectedAreaCode] = useState("");
 
   const MerchantOption = [
     { value: 'Dispatcher', label: 'Dispatcher' },
@@ -274,7 +269,7 @@ const MerchantForm = () => {
               <CustomDiv display="flex" flexDirection="column" margin="0.5rem 0" padding="0">
 
                 <CustomButton border="1px solid var(--orange)" background="var(--orange)" color="var(--white)" fontSize="14px" lineHeight="17.03px" fontWeight="600" margin="1rem 0" height="48px">
-                  {loading ? "loading......" : "Request a Demo"}
+                  Request a Demo
                 </CustomButton>
 
                 <CustomButton border="1px solid var(--orange)" background="var(--white)" color="var(--orange)" fontSize="14px" lineHeight="17.03px" fontWeight="600" height="48px">

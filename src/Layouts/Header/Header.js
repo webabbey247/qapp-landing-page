@@ -7,18 +7,18 @@ import {
   NavLanguage,
   NavLanguageText,
   NavLanguageIcon,
-  NavLanguageDropdownIcon,
+  // NavLanguageDropdownIcon,
   NavMenuWrapper,
   NavMenuUl,
   MenuNavLi,
-  NavNightMood
+  // NavNightMood
 } from "./HeaderStyles";
-import { FaGlobe, FaCaretDown, FaSun } from "react-icons/fa";
+import { FaGlobe } from "react-icons/fa";
 import { Container } from "../../globalStyles";
 import { IconContext } from "react-icons";
 import { qappLogo } from "../../assets/images";
 import { CustomRouterLink } from "styles/GlobalCss";
-import { Calendar, Sunrise } from "react-feather";
+// import { Calendar, Sunrise } from "react-feather";
 
 
 const Header = () => {

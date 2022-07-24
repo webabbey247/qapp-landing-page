@@ -3,7 +3,7 @@ import styled from "styled-components";
 import {Hero} from "../components";
 import PageLayout from "../Layouts/PageLayout";
 
-import {Section, Container} from "../globalStyles";
+import {Section} from "../globalStyles";
 
 import {Features} from "../components";
 import { Content4Column4, ContentRow, SiteContainer } from "styles/GlobalCss";
