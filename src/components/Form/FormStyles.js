@@ -33,10 +33,10 @@ export const Form = styled.form`
 export const Input = styled.input`
   background-color: var(--white);
   border: 1px solid var(--primary);
-  height: 62px;
+  height: 48px;
   padding: 0 16px;
   width: ${({ width }) => (width ? width : "100%")};
-  border-radius: 8px;
+  border-radius: 4px;
   font-weight: 600;
   box-sizing: border-box;
   color: var(--primary);
@@ -44,9 +44,9 @@ export const Input = styled.input`
   line-height: 17.05px;
   margin-bottom: 1rem;
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+//   &:last-child {
+//     margin-bottom: 0;
+//   }
 
   &.invalid {
     background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23dc3545' viewBox='-2 -2 7 7'%3E%3Cpath stroke='%23dc3545' d='M0 0l3 3m0-3L0 3'/%3E%3Ccircle r='.5'/%3E%3Ccircle cx='3' r='.5'/%3E%3Ccircle cy='3' r='.5'/%3E%3Ccircle cx='3' cy='3' r='.5'/%3E%3C/svg%3E") !important;
@@ -94,5 +94,5 @@ margin: 0px;
 padding: 0px;
 position: absolute;
 right: 3%;
-top: 28%;
+top: 22%;
 `;

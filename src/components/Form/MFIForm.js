@@ -32,12 +32,6 @@ const MFIForm = () => {
                 });
 
                 setAreaCode(areaCodeData);
-                // if (areaCodeData.length > 0) {
-                //     let defaultAreaData = areaCodeData.filter((a) => a.code === "NG");
-                //     if (defaultAreaData.length > 0) {
-                //         setSelectedAreaCode(defaultAreaData[0]);
-                //     }
-                // }
             })
             .catch((err) => {
                 console.error("Request failed", err);
