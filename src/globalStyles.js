@@ -1,6 +1,9 @@
 import styled, {createGlobalStyle} from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
+
+
+
 :root {
     --primary: #09354a;
     --secondary: #1b4153;
@@ -21,6 +24,8 @@ const GlobalStyle = createGlobalStyle`
     *::after {
     box-sizing: border-box;
   }
+
+  
 
   body, html{
     font-family: 'DM Sans', sans-serif;

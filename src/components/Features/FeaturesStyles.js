@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import {Link} from "react-router-dom";
 
 export const FeaturesCard = styled.div`
   flex: 0 0 100%;
@@ -9,14 +8,18 @@ export const FeaturesCard = styled.div`
   display: flex;
   flex-direction: column;
   border-radius: 10px;
-  height: 340px;
+  height: 240px;
 
   @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
     max-width: 100%;
+    margin: 0.5rem 0;
+    height: 260px;
   }
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
     max-width: 100%;
     margin: 0.5rem 0;
+    height: auto;
+    padding-bottom: 2rem;
   }
 
   @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
@@ -26,7 +29,6 @@ export const FeaturesCard = styled.div`
 `;
 
 export const FeaturesCardTop = styled.div`
-  margin: 0.3rem 0;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -41,13 +43,11 @@ export const FeaturesCardTop = styled.div`
 `;
 
 export const FeaturesCardIconHolder = styled.div`
-  background: var(--icon-gradient);
-  border: 0.770559px solid #235a74;
   box-sizing: border-box;
   border-radius: 5px;
   width: 50px;
-  height: 40px;
-
+  height: 50px;
+  margin-top: 0.5rem;
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
     margin: auto;
   }
@@ -115,15 +115,19 @@ export const FeaturesCta = styled.a`
   backdrop-filter: blur(8px);
   border-radius: 5px;
   margin-left: 3.5rem;
-  padding: 6px 30px;
+  padding: 8px 30px;
   margin-top: 10px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 13px;
   line-height: 25px;
   color: var(--white);
-  width: 140px;
-  font-weight: 400;
+  width: 170px;
+  
+  &:hover {
+    background: #031b26;
+    color: var(--white);
+  }
 
   @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
     margin-left: 0;

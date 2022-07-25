@@ -1,5 +1,5 @@
 import React from "react";
-import PageLayout from "../common/PageLayout";
+import PageLayout from "../Layouts/PageLayout";
 import {Content} from "../components";
 
 const RequestDemo = () => {

@@ -1,18 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 import {Hero} from "../components";
-import PageLayout from "../common/PageLayout";
+import PageLayout from "../Layouts/PageLayout";
 
-import {Section, Container} from "../globalStyles";
+import {Section} from "../globalStyles";
 
 import {Features} from "../components";
-import { Content4Column4, ContentRow } from "styles/GlobalCss";
+import { Content4Column4, ContentRow, SiteContainer } from "styles/GlobalCss";
 
 export const FeaturesSection = styled(Section)`
   background: var(--secondary);
   backdrop-filter: blur(26px);
   padding: 2rem 0;
-  ${Section}
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const FeatureWrapper = styled.div`
@@ -20,7 +22,6 @@ export const FeatureWrapper = styled.div`
   justify-content: space-between;
   flexwrap: wrap;
   width: 100%;
-  // height: 35vh;
   > * {
     flex: 1;
   }
@@ -41,7 +42,7 @@ const Homepage = () => {
     <PageLayout>
       <Hero />
       <FeaturesSection>
-        <Container>
+        <SiteContainer>
           <FeatureWrapper>
             <ContentRow>
               <Content4Column4>
@@ -58,7 +59,7 @@ const Homepage = () => {
               </Content4Column4>
             </ContentRow>
           </FeatureWrapper>
-        </Container>
+        </SiteContainer>
       </FeaturesSection>
     </PageLayout>
   );

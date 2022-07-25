@@ -1,6 +1,32 @@
 import styled from "styled-components";
 import {Container, Heading} from "../../globalStyles";
 
+export const HeroSection = styled.section`
+  background: transparent;
+  padding: 7rem 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+  }
+
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+   padding: 10rem 0;
+  }
+
+  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+  }
+
+  @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+    padding: 2rem 0;
+  }
+
+  @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+  }
+
+`;
+
 export const HeroContainer = styled(Container)`
   display: flex;
   flex-direction: column;
@@ -13,7 +39,7 @@ export const HeroContainer = styled(Container)`
   }
 
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
-    width: min(100%, 24rem);
+    width: min(100%, 20rem);
     padding: 3rem 1rem;
   }
 

@@ -1,13 +1,37 @@
 import styled, {createGlobalStyle} from "styled-components";
 import { Link } from "react-router-dom";
 
+
 export const GlobalStyle = createGlobalStyle`
+
+@font-face {
+  font-family: "proximanova-bold";
+  src: url("../assets/fonts/proximanova-bold-webfont.woff") format("woff"),
+  }
+
+  @font-face {
+  font-family: "proximanova-semi-bold";
+  src: url("../assets/fonts/proximanova-sbold-webfont.woff") format("woff"),
+  }
+
+  @font-face {
+  font-family: "proximanova-regular";
+  src: url("../assets/fonts/proximanova-reg-webfont.woff") format("woff"),
+  }
+
+  @font-face {
+  font-family: "proximanova-light";
+  src: url("../assets/fonts/proximanova-light-webfont.woff") format("woff"),
+  }
+
+
 :root {
-    --primary: #09354a;
+    --primary: #1A3C4A;
     --secondary: #1b4153;
     --header-color: #163e57;
     --orange: #ff6501;
     --icon-border-color: #235a74;
+    --icon-color: #292D32;
     --gray-color: #ECECEC;
     --input-color: #818181;
     --white: #ffffff;
@@ -16,8 +40,11 @@ export const GlobalStyle = createGlobalStyle`
         rgba(16, 63, 87, 0.52) 7.46%,
         rgba(3, 33, 48, 0.52) 95.68%
       );
-  }
 
+      --font-bold:  font-family: 'proximanova-bold', sans-serif;
+      --font-semi-bold:  font-family: 'proximanova-semi-bold', sans-serif;
+      --font-regular:  font-family: 'proximanova-regular', sans-serif;
+  }
 
   *,
   *::before,
@@ -37,12 +64,10 @@ export const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeLegibility;
     background: var(--primary);
     min-height: 100vh;
-    max-height: 100%;  
-    font-family: 'DM Sans', sans-serif;
+    max-height: 100vh;  
+    font-family: 'proximanova-regular', sans-serif;
   }
   `;
-
-
 
 export const MainContainer = styled.main`
   width: 100%;
@@ -51,7 +76,7 @@ export const MainContainer = styled.main`
 
 
 export const SiteContainer = styled.div`
-  width: min(100%, 75rem);
+  width: min(100%, 85rem);
 `;
 
 export const ContentRow = styled.div`
@@ -78,6 +103,28 @@ export const Content2Column2 = styled.div`
   width: 100%;
   padding-right: 10px;
   padding-left: 10px;
+
+  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+  }
+  
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+  }
+  
+  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
 `;
 
 export const Content3Column3 = styled.div`
@@ -96,6 +143,27 @@ export const Content4Column4 = styled.div`
   width: 100%;
   padding-right: 10px;
   padding-left: 10px;
+
+  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+  }
+  
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+  }
+  
+  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 `;
 
 export const CustomDiv = styled.div`
@@ -111,15 +179,15 @@ export const CustomDiv = styled.div`
   max-width:  ${(props) => props.maxWidth || "100%"};
   width: ${(props) => props.width || "100%"};
   flex: ${(props) => props.flex || "0 0 100%"};
-
+  border: ${(props) => props.border || "null"};
 `;
 
 export const CustomButton = styled.button`
   padding: 0.6rem 2rem;
   background: ${(props) => props.background || "#00b2f0"};
-  border-radius: 0;
+  border-radius: 8px;
   border: ${(props) => props.border || "1px solid #00b2f0"};
-  margin: ${(props) => props.margin || "0 0 0 1rem"};
+  margin: ${(props) => props.margin || "0"};
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "47.77px"};
   text-transform: ${(props) => props.textTransform || "unset"};
@@ -137,11 +205,11 @@ export const CustomButton = styled.button`
     border: 1px solid #00b2f0;
     color: var(--white);
   }
-  //   &:hover {
-    //     background: #252b32;
-    //     border: 1px solid #252b32;
-    //     color: var(--white);
-    //   }
+    &:hover {
+         background: #031b26;
+        border: 1px solid #031b26;
+        color: var(--white);
+      }
   `;
 
 
@@ -174,9 +242,14 @@ export const CustomLink = styled.a`
   background: ${(props) => props.background || null};
   display: ${(props) => props.display || 'flex'};
   border-radius: ${(props) => props.borderRadius || null};
+  justify-content: ${(props) => props.justifyContent || null};
   cursor: pointer;
   text-decoration: none;
   text-transform: capitalize;
+
+  &:hover {
+    color: #031b26;
+  }
 `;
 
 export const CustomRouterLink = styled(Link)`
@@ -196,6 +269,29 @@ export const CustomRouterLink = styled(Link)`
   cursor: pointer;
   text-decoration: none;
   text-transform: capitalize;
+
+  &:hover {
+    background: #031b26;
+    color: var(--white);
+  }
+
+  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+  }
+  
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+  }
+  
+  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+   width: 100%;
+  }
+  
+  @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+    width: 100%;
+  }
+  
+  @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+    width: 100%;
+  }
 `;
 
 
@@ -206,10 +302,32 @@ line-height:  ${(props) => props.lineHeight || "47px"};
 color: ${(props) => props.color || "inherit"};
 text-align: ${(props) => props.textAlign || "left"};
 letter-spacing: ${(props) => props.spacing || "0.18px"};
-font-family: ${(props) => props.fontFamily || "var(--font-graphix)"};
+font-family: ${(props) => props.fontFamily || "var(--font-bold)"};
 width: ${(props) => props.width || "100%"};
 padding: ${(props) => props.padding || "0"};
 margin: ${(props) => props.margin || "0"};
+text-transform: ${(props) => props.textTransform || "unset"};
+
+
+
+@media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+}
+
+@media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+font-size: 28px;
+line-height: 34.1px;
+}
+
+@media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+}
+
+
 `;
 
 export const GeneralMdText = styled.h4`
@@ -219,11 +337,29 @@ export const GeneralMdText = styled.h4`
   color: ${(props) => props.color || "#2b2d42"};
   text-align: ${(props) => props.textAlign || "left"};
   letter-spacing: ${(props) => props.spacing || "0.18px"};
-  font-family: ${(props) => props.fontFamily || "inherit"};
+  font-family: ${(props) => props.fontFamily || "var(--font-semi-bold)"};
   width: ${(props) => props.width || "100%"};
   padding: ${(props) => props.padding || "0"};
   margin: ${(props) => props.margin || "0"};
   text-transform: ${(props) => props.textTransform || "lowercase"};
+
+
+  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+  }
+  
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+  }
+  
+  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+  }
+  
+  @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+  font-size: 24px;
+  line-height: 28.3px;
+  }
+  
+  @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+  }
 `;
 
 export const GeneralSmText = styled.p`
@@ -235,9 +371,27 @@ export const GeneralSmText = styled.p`
   color: ${(props) => props.color || ""};
   padding: ${(props) => props.padding || "0"};
   margin: ${(props) => props.margin || "0"};
-  font-family: ${(props) => props.fontFamily || "inherit"};
+  font-family: ${(props) => props.fontFamily || "var(--font-regular)"};
   width: ${(props) => props.width || "100%"};
   height: ${(props) => props.height || "100%"};
   text-transform: ${(props) => props.textTransform || "lowercase"};
   cursor: pointer;
+
+  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+  }
+  
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+  }
+  
+  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+  }
+  
+  @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+  font-size: 14px;
+  line-height: 17.5px;
+
+  }
+  
+  @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+  }
 `;
