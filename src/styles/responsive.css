@@ -5,16 +5,37 @@
 }
 
 @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
-    h2 {
-        font-size: 30px !important;
-    }
-     p {
-        font-size: 17px !important;
-     }
+ 
 }
 
 @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+    iframe {
+        width: 410px;
+    }
+
+    @media screen and (max-device-width: 414px) {
+        iframe {
+         width: 395px;
+       }
+     }
+
+     @media screen and (max-device-width: 390px) {
+        iframe {
+         width: 370px;
+       }
+     }
+
+    @media screen and (max-device-width: 375px) {
+       iframe {
+        width: 355px;
+      }
+    }
+
+
 }
 
 @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+    iframe {
+        width: 300px;
+    }
 }

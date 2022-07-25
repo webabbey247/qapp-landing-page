@@ -21,11 +21,16 @@ import {
   ContentBankChildLTR,
   ContentBankLogo,
   ContentBankChildRTL,
-  ContentBankCta
+  ContentBankCta,
+  // ContentFormLTR,
+  // ContentFormRTL,
+  MobileContainer,
+  MobileVideoContainer,
+  MobileBackIcon
 } from "./ContentStyles";
 import { Container } from "../../globalStyles";
 import { MFIForm, MerchantForm } from "components/Form";
-import { Content2Column2, ContentFullColumn, ContentRow, CustomDiv, GeneralMdText } from "styles/GlobalCss";
+import { Content2Column2, ContentFullColumn, ContentRow, GeneralMdText, GeneralSmText } from "styles/GlobalCss";
 import { BiArrowBack, BiSearch, BiCaretRight } from "react-icons/bi";
 import { myBankIcon, gtbIcon, kudaIcon, bankPlaceholder } from "assets/images";
 import { Link } from "react-router-dom";
@@ -42,22 +47,42 @@ const Content = ({ pageType }) => {
         <ContentSection>
           <ContentContainer>
             <ContentRow>
+              <ContentFullColumn>
+                <Link to="/">
+                  <MobileBackIcon>
+                    <BiArrowBack size="28" color="var(--icon-color)" />
+                  </MobileBackIcon>
+                </Link>
+              </ContentFullColumn>
+
               <Content2Column2>
-                <CustomDiv display="flex" flexDirection="column" padding="0 3rem 0 1.5rem">
+                <ContentVideoContainer>
                   <GeneralMdText fontSize="24px" margin="0 0 10px" lineHeight="35px" textAlign="left" color="var(--orange)" textTransform="unset" fontWeight="600">See How it works</GeneralMdText>
-                  <ContentVideoContainer>
+                  {/* <video width="550" frameBorder="0" height="350" preload="none" autoPlay="true" loop="true" playsInline="" poster={video}>
+<source src={videoMP4} type="video/mp4" />
+</video> */}
+
+                  <iframe width="550" frameBorder="0" height="350" src="https://www.youtube.com/embed/pygGug3TCaI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+
+                </ContentVideoContainer>
+              </Content2Column2>
+
+              <Content2Column2>
+              <MFIForm />
+              </Content2Column2>
+
+              <Content2Column2>
+                <MobileContainer>
+                  <GeneralMdText fontSize="24px" margin="0 0 10px" lineHeight="35px" textAlign="left" color="var(--orange)" textTransform="unset" fontWeight="600">See How it works</GeneralMdText>
+                  <MobileVideoContainer>
                     {/* <video width="550" frameBorder="0" height="350" preload="none" autoPlay="true" loop="true" playsInline="" poster={video}>
                 <source src={videoMP4} type="video/mp4" />
             </video> */}
 
                     <iframe width="550" frameBorder="0" height="350" src="https://www.youtube.com/embed/pygGug3TCaI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                  </MobileVideoContainer>
 
-                  </ContentVideoContainer>
-                </CustomDiv>
-              </Content2Column2>
-
-              <Content2Column2>
-                <MFIForm />
+                </MobileContainer>
               </Content2Column2>
             </ContentRow>
           </ContentContainer>
@@ -68,10 +93,46 @@ const Content = ({ pageType }) => {
         <MerchantSection>
           <ContentContainer>
             <ContentRow>
+              <ContentFullColumn>
+                <Link to="/">
+                  <MobileBackIcon>
+                    <BiArrowBack size="28" color="var(--icon-color)" />
+                  </MobileBackIcon>
+                </Link>
+              </ContentFullColumn>
               <Content2Column2>
-                <CustomDiv display="flex" flexDirection="column" padding="0 3rem 0 1.5rem">
+                <ContentVideoContainer>
                   <GeneralMdText fontSize="24px" margin="0 0 10px" lineHeight="35px" textAlign="left" color="var(--orange)" textTransform="unset" fontWeight="600">See How it works</GeneralMdText>
-                  <ContentVideoContainer>
+
+                  {/* <video width="550" frameBorder="0" height="350" preload="none" autoPlay="true" loop="true" playsInline="" poster={video}>
+                <source src={videoMP4} type="video/mp4" />
+            </video> */}
+
+                  {dispatchVideo ? (
+                    <iframe width="550" frameBorder="0" height="350" src="https://www.youtube.com/embed/pygGug3TCaI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                  ) : (
+                    <iframe width="550" frameBorder="0" height="350" src="https://www.youtube.com/embed/pygGug3TCaI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+                  )}
+
+                  <GeneralSmText color="var(--orange)" margin="1rem 0 0.6rem" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
+                    Dispatch Merchant: {dispatchVideo ? "" : "How it works"}
+                  </GeneralSmText>
+
+                  <GeneralSmText color="var(--primary)" margin="0" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
+                    Ecommerce Merchant: {ecommerceVideo ? "" : "How it works"}
+                  </GeneralSmText>
+
+                </ContentVideoContainer>
+              </Content2Column2>
+
+              <Content2Column2>
+                <MerchantForm />
+              </Content2Column2>
+
+              <Content2Column2>
+                <MobileContainer>
+                  <GeneralMdText fontSize="24px" margin="0 0 10px" lineHeight="35px" textAlign="left" color="var(--orange)" textTransform="unset" fontWeight="600">See How it works</GeneralMdText>
+                  <MobileVideoContainer>
                     {/* <video width="550" frameBorder="0" height="350" preload="none" autoPlay="true" loop="true" playsInline="" poster={video}>
                 <source src={videoMP4} type="video/mp4" />
             </video> */}
@@ -82,19 +143,15 @@ const Content = ({ pageType }) => {
                       <iframe width="550" frameBorder="0" height="350" src="https://www.youtube.com/embed/pygGug3TCaI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                     )}
 
-                  </ContentVideoContainer>
-                  <GeneralMdText color="var(--orange)" margin="1rem 0 0.6rem" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
+                  </MobileVideoContainer>
+                  <GeneralSmText color="var(--orange)" margin="1rem 0 0.6rem" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
                     Dispatch Merchant: {dispatchVideo ? "" : "How it works"}
-                  </GeneralMdText>
+                  </GeneralSmText>
 
-                  <GeneralMdText color="var(--primary)" margin="0" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
+                  <GeneralSmText color="var(--primary)" margin="0" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
                     Ecommerce Merchant: {ecommerceVideo ? "" : "How it works"}
-                  </GeneralMdText>
-                </CustomDiv>
-              </Content2Column2>
-
-              <Content2Column2>
-                <MerchantForm />
+                  </GeneralSmText>
+                </MobileContainer>
               </Content2Column2>
             </ContentRow>
           </ContentContainer>
@@ -179,7 +236,7 @@ const Content = ({ pageType }) => {
                     <ContentBankChild>
                       <ContentBankChildLTR>
                         <ContentBankLogo src={myBankIcon} alt="First bank" />
-                        <GeneralMdText textAlign="center" color="var(--primary)" fontSize="20px" lineHeight="24px" fontWeight="600" textTransform="capitalize" margin="5px 0 0">First bank</GeneralMdText>
+                        <GeneralSmText textAlign="center" color="var(--primary)" fontSize="20px" lineHeight="24px" fontWeight="600" textTransform="capitalize" margin="5px 0 0">First bank</GeneralSmText>
                       </ContentBankChildLTR>
                       <ContentBankChildRTL>
                         <BiCaretRight color="var(--icon-color)" size='28' strokeWidth="0" />
@@ -189,7 +246,7 @@ const Content = ({ pageType }) => {
                     <ContentBankChild>
                       <ContentBankChildLTR>
                         <ContentBankLogo src={gtbIcon} alt="Guaranty Trust Bank" />
-                        <GeneralMdText textAlign="center" color="var(--primary)" fontSize="20px" lineHeight="24px" fontWeight="600" textTransform="capitalize" margin="5px 0 0">Guaranty Trust Bank</GeneralMdText>
+                        <GeneralSmText textAlign="center" color="var(--primary)" fontSize="20px" lineHeight="24px" fontWeight="600" textTransform="capitalize" margin="5px 0 0">Guaranty Trust Bank</GeneralSmText>
                       </ContentBankChildLTR>
                       <ContentBankChildRTL>
                         <BiCaretRight color="var(--icon-color)" size='28' strokeWidth="0" />
@@ -247,7 +304,7 @@ const Content = ({ pageType }) => {
                     <ContentBankChild>
                       <ContentBankChildLTR>
                         <ContentBankLogo src={bankPlaceholder} alt="Chase MFB" />
-                        <GeneralMdText textAlign="center" color="var(--primary)" fontSize="20px" lineHeight="24px" fontWeight="600" textTransform="capitalize" margin="5px 0 0">Chase MFB</GeneralMdText>
+                        <GeneralSmText textAlign="center" color="var(--primary)" fontSize="20px" lineHeight="24px" fontWeight="600" textTransform="capitalize" margin="5px 0 0">Chase MFB</GeneralSmText>
                       </ContentBankChildLTR>
                       <ContentBankChildRTL>
                         <BiCaretRight color="var(--icon-color)" size='28' strokeWidth="0" />
@@ -257,7 +314,7 @@ const Content = ({ pageType }) => {
                     <ContentBankChild>
                       <ContentBankChildLTR>
                         <ContentBankLogo src={kudaIcon} alt="Kuda MFB" />
-                        <GeneralMdText textAlign="center" color="var(--primary)" fontSize="20px" lineHeight="24px" fontWeight="600" textTransform="capitalize" margin="5px 0 0">Kuda MFB</GeneralMdText>
+                        <GeneralSmText textAlign="center" color="var(--primary)" fontSize="20px" lineHeight="24px" fontWeight="600" textTransform="capitalize" margin="5px 0 0">Kuda MFB</GeneralSmText>
                       </ContentBankChildLTR>
                       <ContentBankChildRTL>
                         <BiCaretRight color="var(--icon-color)" size='28' strokeWidth="0" />
@@ -267,7 +324,7 @@ const Content = ({ pageType }) => {
                     <ContentBankChild>
                       <ContentBankChildLTR>
                         <ContentBankLogo src={bankPlaceholder} alt="Tower Microfinance" />
-                        <GeneralMdText textAlign="center" color="var(--primary)" fontSize="20px" lineHeight="24px" fontWeight="600" textTransform="capitalize" margin="5px 0 0">Tower Microfinance</GeneralMdText>
+                        <GeneralSmText textAlign="center" color="var(--primary)" fontSize="20px" lineHeight="24px" fontWeight="600" textTransform="capitalize" margin="5px 0 0">Tower Microfinance</GeneralSmText>
                       </ContentBankChildLTR>
                       <ContentBankChildRTL>
                         <BiCaretRight color="var(--icon-color)" size='28' strokeWidth="0" />

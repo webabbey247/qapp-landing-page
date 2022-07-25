@@ -14,7 +14,7 @@ background: var(--primary);
   background-image: url("${homeBg}");
   background-repeat: no-repeat;
   background-position: right;
-  min-height: 320px;
+  min-height: 100vh;
   background-size: contain;
 `;
 

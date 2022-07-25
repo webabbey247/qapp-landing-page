@@ -12,6 +12,24 @@ export const ContentSection = styled.section`
   padding: 7.3rem 0;
   flex-direction: row;
   width: 100%;
+
+  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+  }
+  
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+    padding: 10rem 0;
+  }
+  
+  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+  }
+  
+  @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+    padding: 3rem 0;
+  }
+  
+  @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+
+  }
 `;
 
 export const ContentBankSection = styled.section`
@@ -23,6 +41,24 @@ export const ContentBankSection = styled.section`
   padding: 7.3rem 0;
   flex-direction: row;
   width: 100%;
+
+  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+  }
+  
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+    padding: 10rem 0;
+  }
+  
+  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+  }
+  
+  @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+    padding: 3rem 0.5rem;
+  }
+  
+  @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+
+  }
 `;
 
 export const MerchantSection = styled.section`
@@ -43,6 +79,27 @@ width: min(100%, 85rem);
 export const ContentVideoContainer = styled.div`
 width: auto;
 margin-bottom: 0;
+display: flex;
+flex-direction: column;
+
+@media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+  
+}
+
+@media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+  display: none;
+}
+
+@media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+  display: none;
+}
 `;
 
 export const ContentVideoPlaceholder = styled.div`
@@ -114,6 +171,23 @@ export const ContentBackIcon = styled.div`
 margin: 0 0 2rem;
 cursor: pointer;
 `;
+
+export const MobileBackIcon = styled.div`
+margin: 0 0 2rem;
+cursor: pointer;
+display: none;
+
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+  display: flex;
+}
+
+@media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+  display: flex;
+}
+`;
+
+
 
 export const ContentSearchForm = styled.div`
 padding: 1rem 0;
@@ -198,6 +272,22 @@ background: var(--white);
 padding: 1rem;
 border-radius: 8px;
 margin: 15px 0;
+
+@media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+}
+
+@media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+  padding: 0.8rem;
+}
+
+@media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+}
 `;
 
 
@@ -234,3 +324,61 @@ font-weight: 700;
   color: var(--primary);
 }
 `;
+
+export const ContentFormLTR = styled.div`
+order: 1;
+display: flex;
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+}
+
+@media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+  order: 2;
+  display: flex;
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+}
+
+@media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+
+}
+`;
+
+
+export const ContentFormRTL = styled.div`
+order: 2;
+display: flex;
+`;
+
+export const MobileContainer = styled.div`
+
+@media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+  display: none;
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+  display: none;
+}
+
+@media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+  display: none;
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 4rem;
+}
+
+@media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 3rem;
+}
+`;
+
+export const MobileVideoContainer = styled.div``

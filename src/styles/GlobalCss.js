@@ -104,7 +104,26 @@ export const Content2Column2 = styled.div`
   padding-right: 10px;
   padding-left: 10px;
 
-
+  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+  }
+  
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+  }
+  
+  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
 
 `;
 
@@ -288,6 +307,27 @@ width: ${(props) => props.width || "100%"};
 padding: ${(props) => props.padding || "0"};
 margin: ${(props) => props.margin || "0"};
 text-transform: ${(props) => props.textTransform || "unset"};
+
+
+
+@media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+}
+
+@media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+}
+
+@media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+}
+
+@media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+font-size: 28px;
+line-height: 34.1px;
+}
+
+@media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+}
+
+
 `;
 
 export const GeneralMdText = styled.h4`
@@ -302,6 +342,24 @@ export const GeneralMdText = styled.h4`
   padding: ${(props) => props.padding || "0"};
   margin: ${(props) => props.margin || "0"};
   text-transform: ${(props) => props.textTransform || "lowercase"};
+
+
+  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+  }
+  
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+  }
+  
+  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+  }
+  
+  @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+  font-size: 24px;
+  line-height: 28.3px;
+  }
+  
+  @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+  }
 `;
 
 export const GeneralSmText = styled.p`
@@ -318,4 +376,22 @@ export const GeneralSmText = styled.p`
   height: ${(props) => props.height || "100%"};
   text-transform: ${(props) => props.textTransform || "lowercase"};
   cursor: pointer;
+
+  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
+  }
+  
+  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
+  }
+  
+  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
+  }
+  
+  @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+  font-size: 14px;
+  line-height: 17.5px;
+
+  }
+  
+  @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+  }
 `;

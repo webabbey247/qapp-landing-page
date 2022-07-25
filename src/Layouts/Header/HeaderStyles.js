@@ -24,9 +24,11 @@ export const Menu = styled.nav`
   }
 
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+    // box-shadow: 0 2px 3px rgba(96, 96, 96, .1);
   }
 
   @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
+    // box-shadow: 0 2px 3px rgba(96, 96, 96, .1);
   }
 `;
 

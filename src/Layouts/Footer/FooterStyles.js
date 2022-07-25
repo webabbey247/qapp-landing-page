@@ -13,18 +13,8 @@ export const FooterWrapper = styled.div`
   justify-content: space-between;
   flex-direction: row;
 
-  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
-  }
-  
-  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
-  }
-  
-  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
-
-  }
-  
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
-    flex-direction: column;
+    flex-direction: column-reverse;
     justify-content: center;
   }
   
@@ -37,15 +27,6 @@ export const FooterLTR = styled.div`
   display: flex;
   justify-content: flex-start;
 
-  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
-  }
-  
-  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
-  }
-  
-  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
-
-  }
   
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
     justify-content: center;
@@ -63,16 +44,6 @@ export const FooterCopyright = styled.p`
   font-weight: 700;
   margin-bottom: 0;
 
-  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
-  }
-  
-  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
-  }
-  
-  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
-
-  }
-  
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
    text-align:center;
   }
@@ -87,16 +58,6 @@ export const FooterRTL = styled.div`
   display: flex;
   justify-content: flex-start;
   flex-direction: row;
-
-  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
-  }
-  
-  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
-  }
-  
-  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
-
-  }
   
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
     justify-content: center;
@@ -120,22 +81,11 @@ export const FooterNavLinks = styled(Link)`
   &:last-child {
     margin-right: 0;
   }
-
-
-  @media screen and (min-device-width: 1400px) and (max-device-width: 1600px) {
-  }
-  
-  @media screen and (min-device-width: 1200px) and (max-device-width: 1400px) {
-  }
-  
-  @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
-
-  }
   
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
     text-align: center;
     margin-right: 0;
-    padding: 10px 0 0;
+    padding: 5px 0 10px;
   }
   
   @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {

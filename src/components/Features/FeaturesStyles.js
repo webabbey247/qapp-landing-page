@@ -13,11 +13,13 @@ export const FeaturesCard = styled.div`
   @media only screen and (min-device-width: 764px) and (max-device-width: 1199px) {
     max-width: 100%;
     margin: 0.5rem 0;
-
+    height: 260px;
   }
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
     max-width: 100%;
     margin: 0.5rem 0;
+    height: auto;
+    padding-bottom: 2rem;
   }
 
   @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {

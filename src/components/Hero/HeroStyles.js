@@ -19,6 +19,7 @@ export const HeroSection = styled.section`
   }
 
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
+    padding: 2rem 0;
   }
 
   @media only screen and (min-device-width: 218px) and (max-device-width: 359px) {
@@ -38,7 +39,7 @@ export const HeroContainer = styled(Container)`
   }
 
   @media only screen and (min-device-width: 360px) and (max-device-width: 763px) {
-    width: min(100%, 24rem);
+    width: min(100%, 20rem);
     padding: 3rem 1rem;
   }
 
