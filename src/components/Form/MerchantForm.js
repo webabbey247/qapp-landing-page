@@ -136,9 +136,6 @@ const MerchantForm = () => {
 
 
             <Content2Column2>
-              {/* {errors.rcNumber && (
-                <InputErrors>{errors.rcNumber.message}</InputErrors>
-              )} */}
               <Input
                 className={`${errors.rcNumber ? "invalid" : ""}`}
                 name='rcNumber'

@@ -185,7 +185,7 @@ export const CustomDiv = styled.div`
 export const CustomButton = styled.button`
   padding: 0.6rem 2rem;
   background: ${(props) => props.background || "#00b2f0"};
-  border-radius: 8px;
+  border-radius: 4px;
   border: ${(props) => props.border || "1px solid #00b2f0"};
   margin: ${(props) => props.margin || "0"};
   width: ${(props) => props.width || "100%"};

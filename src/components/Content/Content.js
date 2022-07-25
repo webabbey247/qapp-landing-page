@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import styled from "styled-components";
+import styled from "styled-components";
 import {
   ContentSection,
   ContentBankSection,
@@ -36,10 +36,12 @@ import { myBankIcon, gtbIcon, kudaIcon, bankPlaceholder } from "assets/images";
 import { Link } from "react-router-dom";
 
 
+
+
 const Content = ({ pageType }) => {
 
-  const [dispatchVideo] = useState(true)
-  const [ecommerceVideo] = useState(false)
+  const [dispatchVideo, setDispatchVideo] = useState(true)
+  const [ecommerceVideo, setEcommerceVideo] = useState(false)
 
   return (
     <>
@@ -58,10 +60,9 @@ const Content = ({ pageType }) => {
               <Content2Column2>
                 <ContentVideoContainer>
                   <GeneralMdText fontSize="24px" margin="0 0 10px" lineHeight="35px" textAlign="left" color="var(--orange)" textTransform="unset" fontWeight="600">See How it works</GeneralMdText>
-                  {/* <video width="550" frameBorder="0" height="350" preload="none" autoPlay="true" loop="true" playsInline="" poster={video}>
-<source src={videoMP4} type="video/mp4" />
-</video> */}
-
+                      {/* <video width="550" frameBorder="0" height="350" preload="none" autoPlay="true" loop="true" playsInline="" poster={video}>
+                      <source src={videoMP4} type="video/mp4" />
+                      </video> */}
                   <iframe width="550" frameBorder="0" height="350" src="https://www.youtube.com/embed/pygGug3TCaI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
 
                 </ContentVideoContainer>
@@ -76,12 +77,10 @@ const Content = ({ pageType }) => {
                   <GeneralMdText fontSize="24px" margin="0 0 10px" lineHeight="35px" textAlign="left" color="var(--orange)" textTransform="unset" fontWeight="600">See How it works</GeneralMdText>
                   <MobileVideoContainer>
                     {/* <video width="550" frameBorder="0" height="350" preload="none" autoPlay="true" loop="true" playsInline="" poster={video}>
-                <source src={videoMP4} type="video/mp4" />
-            </video> */}
-
+                    <source src={videoMP4} type="video/mp4" />
+                    </video> */}
                     <iframe width="550" frameBorder="0" height="350" src="https://www.youtube.com/embed/pygGug3TCaI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                   </MobileVideoContainer>
-
                 </MobileContainer>
               </Content2Column2>
             </ContentRow>
@@ -105,8 +104,8 @@ const Content = ({ pageType }) => {
                   <GeneralMdText fontSize="24px" margin="0 0 10px" lineHeight="35px" textAlign="left" color="var(--orange)" textTransform="unset" fontWeight="600">See How it works</GeneralMdText>
 
                   {/* <video width="550" frameBorder="0" height="350" preload="none" autoPlay="true" loop="true" playsInline="" poster={video}>
-                <source src={videoMP4} type="video/mp4" />
-            </video> */}
+                  <source src={videoMP4} type="video/mp4" />
+                  </video> */}
 
                   {dispatchVideo ? (
                     <iframe width="550" frameBorder="0" height="350" src="https://www.youtube.com/embed/pygGug3TCaI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
@@ -114,11 +113,11 @@ const Content = ({ pageType }) => {
                     <iframe width="550" frameBorder="0" height="350" src="https://www.youtube.com/embed/pygGug3TCaI" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
                   )}
 
-                  <GeneralSmText color="var(--orange)" margin="1rem 0 0.6rem" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
+                  <GeneralSmText onClick={()=> (setDispatchVideo(true), setEcommerceVideo(false))} color="var(--orange)" margin="1rem 0 0.6rem" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
                     Dispatch Merchant: {dispatchVideo ? "" : "How it works"}
                   </GeneralSmText>
 
-                  <GeneralSmText color="var(--primary)" margin="0" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
+                  <GeneralSmText onClick={()=> (setDispatchVideo(false), setEcommerceVideo(true))} color="var(--primary)" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
                     Ecommerce Merchant: {ecommerceVideo ? "" : "How it works"}
                   </GeneralSmText>
 
@@ -144,13 +143,31 @@ const Content = ({ pageType }) => {
                     )}
 
                   </MobileVideoContainer>
-                  <GeneralSmText color="var(--orange)" margin="1rem 0 0.6rem" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
-                    Dispatch Merchant: {dispatchVideo ? "" : "How it works"}
+                  {dispatchVideo ? (
+                    <GeneralSmText color="var(--orange)" margin="1rem 0 0.6rem" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
+                    Dispatch Merchant:
+                  </GeneralSmText>
+                  ) : (
+                    <GeneralSmText color="var(--primary)" margin="1rem 0 0.6rem" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
+                    Dispatch Merchant: How it works
                   </GeneralSmText>
 
-                  <GeneralSmText color="var(--primary)" margin="0" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
-                    Ecommerce Merchant: {ecommerceVideo ? "" : "How it works"}
+                  )}
+                  
+
+                  {ecommerceVideo ? (
+                    <GeneralSmText color="var(--orange)" margin="0" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
+                    Ecommerce Merchant:
                   </GeneralSmText>
+                  ) : (
+                    <GeneralSmText color="var(--primary)" margin="0" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
+                    Ecommerce Merchant: "How it works
+                  </GeneralSmText>
+                  )}
+
+                  {/* <GeneralSmText color="var(--primary)" margin="0" fontSize="18px" lineHeight="29.05px" fontWeight="600" textAlign="left" textTransform="unset">
+                    Ecommerce Merchant: {ecommerceVideo ? "" : "How it works"}
+                  </GeneralSmText> */}
                 </MobileContainer>
               </Content2Column2>
             </ContentRow>
